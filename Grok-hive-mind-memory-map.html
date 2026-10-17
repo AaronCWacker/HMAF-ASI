@@ -1,0 +1,3037 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>🐝 Hive Mind Memory Map — Aaron C. Wacker</title><style>
+:root{--bg:#0f172a;--card:#111827;--ink:#e5e7eb;--mut:#94a3b8;--acc:#f59e0b;--acc2:#38bdf8}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#0b1020,#111827 60%,#1e1b4b);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#0b1020ee;backdrop-filter:blur(6px);border-bottom:1px solid #334155;padding:10px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+header b{color:var(--acc)}header input{flex:1;min-width:200px;padding:7px 10px;border-radius:8px;border:1px solid #475569;background:#0f172a;color:var(--ink)}
+header button{padding:7px 10px;border-radius:8px;border:1px solid #475569;background:#1e293b;color:var(--ink);cursor:pointer}
+main{max-width:1200px;margin:0 auto;padding:20px}
+h1{color:var(--acc);font-size:1.8em}h2{color:var(--acc2);border-bottom:2px solid #334155;padding-bottom:4px;margin-top:2.2em}h3{color:#fbbf24}h4{color:#a5b4fc}h5{color:#f9a8d4;font-size:1.05em;margin-bottom:.3em}
+a{color:#7dd3fc}code{background:#1e293b;padding:1px 5px;border-radius:5px;color:#fde68a}
+table{border-collapse:collapse;width:100%;margin:8px 0 18px;background:var(--card);border-radius:10px;overflow:hidden;font-size:.92em}
+th{background:#1e293b;color:#fcd34d;text-align:left}th,td{border:1px solid #334155;padding:6px 9px;vertical-align:top}tr:nth-child(even) td{background:#0f172a}
+blockquote{border-left:4px solid var(--acc);margin:10px 0;padding:6px 14px;background:#1e293b;border-radius:6px}
+ol li,ul li{margin:3px 0}.hide{display:none!important}
+</style></head>
+<body><header><b>🐝 Hive Mind Memory Map</b><input id="q" placeholder="🔎 Filter rows and items (e.g., memory, MCP, FHIR)…"><button id="top">⬆️ Top</button></header><main><h1 id="distributed-hive-mind-agentic-workflow-for-progressive-longitudinal-intelligence-to-solve-for-ai-operations-at-scale">🐝 Distributed Hive Mind Agentic Workflow for Progressive Longitudinal Intelligence to Solve for AI Operations at Scale</h1>
+<p><strong>Living memory map for Aaron C. Wacker — FDE mentor talk on healthcare AI.</strong><br />
+Version: draft 1 (generated 2026-10-17). Revise freely, then lift each topic into one slide (about one minute per slide).</p>
+<blockquote>
+<p>🧭 <strong>How to use this file:</strong> Part 1 is the talk outline and the per-slide tables. Part 2 holds the references. Parts 3–4 are your prompt toolkit. Part 5 lists links. Part 6 gives next steps for the single super HTML demo app.</p>
+</blockquote>
+<h2 id="contents">📑 Contents</h2>
+<ol>
+<li>Part 1 — Regrouped Outline and Per-Slide Tables</li>
+<li>Part 2 — Reference Table (arXiv and YouTube)</li>
+<li>Part 3 — Glossary and Favorite File Types</li>
+<li>Part 4 — First-Principles Word Sets and AI Protocols &amp; Standards</li>
+<li>Part 5 — Links and Resources</li>
+<li>Part 6 — Next Steps: Single Super HTML Demo App</li>
+</ol>
+<hr />
+<h2 id="part-1-regrouped-outline-49-topics-10-sections">Part 1 — Regrouped Outline (49 Topics, 10 Sections)</h2>
+<p>Near-duplicates sit side by side so you can merge them later: <strong>15 + 35</strong> (Hive Mind), <strong>2 + 36</strong> (Longitudinal Intelligence), and <strong>5 + 29 + 49</strong> (AI Pair Programming). All 49 topics are kept. <code>(orig #N)</code> is the number in your original list.</p>
+<h3 id="section-1-why-value">💗 Section 1: Why &amp; Value</h3>
+<ol>
+<li>💗 <strong>Share Your Why: Care and Compassion in an AI and Value-Based Care World</strong> — <em>Compassionate Care</em> <code>(orig #1)</code></li>
+<li>🏥 <strong>How We Get to Better Care and Better AI for Healthcare</strong> — <em>Better Care</em> <code>(orig #4)</code></li>
+<li>📏 <strong>Determining VBFs (Vital Business Functions) and Measuring the Business Quality and Efficacy of Results</strong> — <em>Value Metrics</em> <code>(orig #14)</code></li>
+<li>⚡ <strong>How to Balance Speed to Development and Speed to Value Simultaneously</strong> — <em>Dual Speed</em> <code>(orig #3)</code></li>
+</ol>
+<h3 id="section-2-memory-longitudinal-intelligence">🧠 Section 2: Memory &amp; Longitudinal Intelligence</h3>
+<ol start="5">
+<li>📈 <strong>Patterns of Progressive, Longitudinal Intelligence to Solve for AI Ops at Scale</strong> — <em>Progressive Patterns</em> <code>(orig #2)</code></li>
+<li>🕰️ <strong>Progressive Longitudinal Intelligence</strong> — <em>Longitudinal Intelligence</em> <code>(orig #36)</code></li>
+<li>🧠 <strong>AI Memory: Semantic Memory, Episodic Memory, and RAG Using Chroma</strong> — <em>Agent Memory</em> <code>(orig #6)</code></li>
+<li>🗂️ <strong>Deciding What to Remember</strong> — <em>Memory Curation</em> <code>(orig #34)</code></li>
+<li>✂️ <strong>Minimization Principles: Distill, Merge, and Crop Memory Chunks for Communication</strong> — <em>Distill-Merge-Crop</em> <code>(orig #22)</code></li>
+</ol>
+<h3 id="section-3-hive-mind-agents">🐝 Section 3: Hive Mind Agents</h3>
+<ol start="10">
+<li>🐝 <strong>Distributed Hive Mind Agentic Workflows (Controversial, Work in Progress)</strong> — <em>Hive Workflow</em> <code>(orig #15)</code></li>
+<li>🕸️ <strong>Distributed Hive Minds</strong> — <em>Hive Mind</em> <code>(orig #35)</code></li>
+<li>🚀 <strong>New, Novel Approaches to AppDev at Speed, Scale, and Minimal Cost</strong> — <em>Lean AppDev</em> <code>(orig #37)</code></li>
+</ol>
+<h3 id="section-4-specs-markdown">📝 Section 4: Specs &amp; Markdown</h3>
+<ol start="13">
+<li>📝 <strong>Markdown Structures: Developing Great Specifications</strong> — <em>Markdown Specs</em> <code>(orig #18)</code></li>
+<li>♻️ <strong>Reusable Prompt Spec Patterns</strong> — <em>Prompt Patterns</em> <code>(orig #24)</code></li>
+<li>🗃️ <strong>Datasets as a Reusable Markdown Spec Template</strong> — <em>Dataset Specs</em> <code>(orig #28)</code></li>
+<li>🔤 <strong>Language Precedence: Which Keywords and File Types to Invest In</strong> — <em>Language Precedence</em> <code>(orig #17)</code></li>
+<li>🏎️ <strong>Language Speed-Up Phrasing</strong> — <em>Speed Phrasing</em> <code>(orig #23)</code></li>
+<li>📦 <strong>Constraint-Based Modeling and Nested Boundaries</strong> — <em>Nested Constraints</em> <code>(orig #19)</code></li>
+<li>⚛️ <strong>First-Principles Asymptotic Reduction of Parts and Process Steps</strong> — <em>Asymptotic Reduction</em> <code>(orig #21)</code></li>
+<li>👪 <strong>Representing Age Groups Using CMS Age Groups with Order, CMS Age Group, and Representative Emojis</strong> — <em>CMS Age Groups</em> <code>(orig #20)</code></li>
+</ol>
+<h3 id="section-5-python-html-delivery">🐍 Section 5: Python &amp; HTML Delivery</h3>
+<ol start="21">
+<li>🐍 <strong>Python-Based Delivery Using Regions, Streamlit, and Markdown Specification-Led Instruction</strong> — <em>Streamlit Regions</em> <code>(orig #8)</code></li>
+<li>🏗️ <strong>What Regions Look Like in a Framed Application with 30K–40K Lines of Code (a Large Multiprocess, Multi-Agent System)</strong> — <em>Region Architecture</em> <code>(orig #9)</code></li>
+<li>🧰 <strong>Languages, Libraries, Preferences, and Why</strong> — <em>Stack Choices</em> <code>(orig #10)</code></li>
+<li>⚖️ <strong>Trade-offs Between HTML and Python, and Using Them Together</strong> — <em>HTML + Python</em> <code>(orig #11)</code></li>
+<li>📄 <strong>Patterns of Outward-Facing Single-File Work</strong> — <em>Single-File Apps</em> <code>(orig #25)</code></li>
+<li>😈 <strong>Daredevil It: First Contact to Runnable Solutions in Under Five Minutes (Runnable Graphs as First Output; MD → HTML → Python)</strong> — <em>Daredevil Speed</em> <code>(orig #16)</code></li>
+<li>📃 <strong>The GitHub Pages Pattern</strong> — <em>GitHub Pages</em> <code>(orig #26)</code></li>
+<li>⚙️ <strong>GitHub → Actions → HTML/JS App</strong> — <em>Actions Deploy</em> <code>(orig #42)</code></li>
+<li>🎬 <strong>Demo Video → Transcript → Markdown Spec → HTML App with All IO → Video Out</strong> — <em>Video-to-App</em> <code>(orig #41)</code></li>
+</ol>
+<h3 id="section-6-models-ops-telemetry">📊 Section 6: Models, Ops &amp; Telemetry</h3>
+<ol start="30">
+<li>🧩 <strong>AI Sets, Models, and Assets: Scale, Cost, and Delivery</strong> — <em>Model Assets</em> <code>(orig #7)</code></li>
+<li>🧪 <strong>Per-Model Qualification of Assets, Memory, Gaps, Upgrades, Drift, and Resilience</strong> — <em>Model Qualification</em> <code>(orig #12)</code></li>
+<li>🏒 <strong>Model Efficiency Gains, Performance Measurement, and How to Play Where the Puck Is Headed</strong> — <em>Puck Strategy</em> <code>(orig #13)</code></li>
+<li>📡 <strong>Patterns and Telemetry in AIOps</strong> — <em>AIOps Telemetry</em> <code>(orig #27)</code></li>
+</ol>
+<h3 id="section-7-protocols-frontier-tools">🌐 Section 7: Protocols &amp; Frontier Tools</h3>
+<ol start="34">
+<li>🔌 <strong>Frontier AI Systems, Multimodal AI Tools, and Protocols and Standards: MCP and A2A</strong> — <em>MCP + A2A</em> <code>(orig #39)</code></li>
+<li>🌍 <strong>AI in the Wild: GPT, Gemini, Grok, Claude, Meta, HeyGen, GitHub Actions/Pages/Copilot/Repos, Runnable Memory, Public Internet Apps, and Live MCP and Tools</strong> — <em>AI in the Wild</em> <code>(orig #40)</code></li>
+<li>📋 <strong>Dev Tools for Developers, GitHub, and AI: Copy/Paste Across Browser Tabs and Apps</strong> — <em>Copy-Paste Flow</em> <code>(orig #38)</code></li>
+</ol>
+<h3 id="section-8-real-time-browser-io">🎥 Section 8: Real-Time Browser IO</h3>
+<ol start="37">
+<li>🎥 <strong>Real-Time Human Sensing in the Browser: SSL, WebRTC, PeerJS, Multiuser, Video Capture and Playback, Cameras, Screens, Speech Transcription (STT), Speaker IO, Speech Synthesis, TF.js, Browser Voice Standards, and MediaPipe Face Mesh, Hand, and Body Tracking</strong> — <em>Browser Sensing</em> <code>(orig #43)</code></li>
+</ol>
+<h3 id="section-9-azure-infrastructure">☁️ Section 9: Azure &amp; Infrastructure</h3>
+<ol start="38">
+<li>🔐 <strong>Setup Process, Automation of First Principles, Minimal Necessary Footprint, Security, and Architecture</strong> — <em>Secure Setup</em> <code>(orig #44)</code></li>
+<li>🖥️ <strong>Hardware and Networks</strong> — <em>Hardware &amp; Networks</em> <code>(orig #45)</code></li>
+<li>📶 <strong>Network Process Activation</strong> — <em>Network Activation</em> <code>(orig #46)</code></li>
+<li>🏭 <strong>Agentic Azure Software Factory Activation</strong> — <em>Software Factory</em> <code>(orig #47)</code></li>
+<li>🔄 <strong>Azure Synchronization</strong> — <em>Azure Sync</em> <code>(orig #48)</code></li>
+<li>🐳 <strong>Mixing Complex Python and Azure Patterns for Containers and MFA</strong> — <em>Containers + MFA</em> <code>(orig #33)</code></li>
+<li>🧭 <strong>Web SWOT, Python SWOT, and Azure SWOT</strong> — <em>Platform SWOT</em> <code>(orig #32)</code></li>
+</ol>
+<h3 id="section-10-pair-programming-engagement">🤝 Section 10: Pair Programming &amp; Engagement</h3>
+<ol start="45">
+<li>🧑‍💻 <strong>Defining AI Assets and AI Pair Programming</strong> — <em>AI Assets</em> <code>(orig #5)</code></li>
+<li>🆚 <strong>AI Pair Programming: Traditional vs. AI Method</strong> — <em>Traditional vs. AI</em> <code>(orig #29)</code></li>
+<li>🔗 <strong>AI Code Integration for AI Pair Programming</strong> — <em>Code Integration</em> <code>(orig #49)</code></li>
+<li>🧠 <strong>Trade-offs for Opportunity Judgment with SWOT and Steel Man/Straw Man</strong> — <em>Steel Man</em> <code>(orig #31)</code></li>
+<li>🎤 <strong>Engagement Tips</strong> — <em>Engagement</em> <code>(orig #30)</code></li>
+</ol>
+<h3 id="per-slide-mini-tables">🎞️ Per-Slide Mini Tables</h3>
+<p>Each slide has three points, row-header emojis, and a placeholder media file in <code>media/</code>.</p>
+<h4 id="why-value">💗 Why &amp; Value</h4>
+<h5 id="slide-01-compassionate-care">Slide 01 — 💗 Compassionate Care</h5>
+<p><em>Share Your Why: Care and Compassion in an AI and Value-Based Care World</em> <code>(orig #1)</code><br />
+🎬 Media: <code>slide01.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Purpose</td>
+<td>🎯</td>
+<td>Every model ultimately serves a patient, a caregiver, and a clinician.</td>
+</tr>
+<tr>
+<td>2️⃣ Value</td>
+<td>💰</td>
+<td>Value-based care rewards outcomes, not volume, and AI must do the same.</td>
+</tr>
+<tr>
+<td>3️⃣ Story</td>
+<td>📖</td>
+<td>Open with one personal moment that made care matter to you.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-02-better-care">Slide 02 — 🏥 Better Care</h5>
+<p><em>How We Get to Better Care and Better AI for Healthcare</em> <code>(orig #4)</code><br />
+🎬 Media: <code>slide02.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Trust</td>
+<td>🛡️</td>
+<td>Safe, explainable, and auditable outputs earn clinician trust.</td>
+</tr>
+<tr>
+<td>2️⃣ Loop</td>
+<td>🔁</td>
+<td>Clinician feedback continuously improves the system.</td>
+</tr>
+<tr>
+<td>3️⃣ Equity</td>
+<td>⚖️</td>
+<td>Measure performance across age groups and populations.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-03-value-metrics">Slide 03 — 📏 Value Metrics</h5>
+<p><em>Determining VBFs and Measuring the Business Quality and Efficacy of Results</em> <code>(orig #14)</code><br />
+🎬 Media: <code>slide03.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Define</td>
+<td>🎯</td>
+<td>Name the VBFs and the baseline before building anything.</td>
+</tr>
+<tr>
+<td>2️⃣ Measure</td>
+<td>📊</td>
+<td>Track quality, efficacy, cost, and time saved.</td>
+</tr>
+<tr>
+<td>3️⃣ Prove</td>
+<td>✅</td>
+<td>Tie every feature to a measurable business outcome.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-04-dual-speed">Slide 04 — ⚡ Dual Speed</h5>
+<p><em>How to Balance Speed to Development and Speed to Value Simultaneously</em> <code>(orig #3)</code><br />
+🎬 Media: <code>slide04.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Ship</td>
+<td>🚀</td>
+<td>Deliver a runnable slice in the first session.</td>
+</tr>
+<tr>
+<td>2️⃣ Validate</td>
+<td>🧪</td>
+<td>Put it in front of real users the same day.</td>
+</tr>
+<tr>
+<td>3️⃣ Iterate</td>
+<td>🔄</td>
+<td>Let measured value steer the next build.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="memory-longitudinal-intelligence">🧠 Memory &amp; Longitudinal Intelligence</h4>
+<h5 id="slide-05-progressive-patterns">Slide 05 — 📈 Progressive Patterns</h5>
+<p><em>Patterns of Progressive, Longitudinal Intelligence to Solve for AI Ops at Scale</em> <code>(orig #2)</code><br />
+🎬 Media: <code>slide05.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Accrue</td>
+<td>🧱</td>
+<td>Each run adds reusable memory and assets.</td>
+</tr>
+<tr>
+<td>2️⃣ Track</td>
+<td>🕰️</td>
+<td>Longitudinal history reveals both drift and gains.</td>
+</tr>
+<tr>
+<td>3️⃣ Scale</td>
+<td>🌐</td>
+<td>Patterns, not heroics, carry the load at scale.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-06-longitudinal-intelligence">Slide 06 — 🕰️ Longitudinal Intelligence</h5>
+<p><em>Progressive Longitudinal Intelligence</em> <code>(orig #36)</code><br />
+🎬 Media: <code>slide06.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Timeline</td>
+<td>📅</td>
+<td>Intelligence compounds across sessions, projects, and patients.</td>
+</tr>
+<tr>
+<td>2️⃣ Context</td>
+<td>🧩</td>
+<td>Past episodes inform present decisions.</td>
+</tr>
+<tr>
+<td>3️⃣ Healthcare</td>
+<td>🏥</td>
+<td>Patient journeys are inherently longitudinal.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-07-agent-memory">Slide 07 — 🧠 Agent Memory</h5>
+<p><em>AI Memory: Semantic Memory, Episodic Memory, and RAG Using Chroma</em> <code>(orig #6)</code><br />
+🎬 Media: <code>slide07.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Semantic</td>
+<td>📚</td>
+<td>Facts and concepts: what is true.</td>
+</tr>
+<tr>
+<td>2️⃣ Episodic</td>
+<td>🎞️</td>
+<td>Events and sessions: what happened, and when.</td>
+</tr>
+<tr>
+<td>3️⃣ RAG</td>
+<td>🔎</td>
+<td>Chroma stores embeddings for retrieval-augmented answers.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-08-memory-curation">Slide 08 — 🗂️ Memory Curation</h5>
+<p><em>Deciding What to Remember</em> <code>(orig #34)</code><br />
+🎬 Media: <code>slide08.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Keep</td>
+<td>✅</td>
+<td>Decisions, specifications, and outcomes that recur.</td>
+</tr>
+<tr>
+<td>2️⃣ Forget</td>
+<td>🗑️</td>
+<td>Noise, duplicates, and stale context.</td>
+</tr>
+<tr>
+<td>3️⃣ Govern</td>
+<td>🔐</td>
+<td>PHI and other sensitive data require explicit retention rules.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-09-distill-merge-crop">Slide 09 — ✂️ Distill-Merge-Crop</h5>
+<p><em>Minimization Principles: Distill, Merge, and Crop Memory Chunks for Communication</em> <code>(orig #22)</code><br />
+🎬 Media: <code>slide09.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Distill</td>
+<td>🧪</td>
+<td>Reduce each chunk to its essential meaning.</td>
+</tr>
+<tr>
+<td>2️⃣ Merge</td>
+<td>🔗</td>
+<td>Combine overlapping chunks into one.</td>
+</tr>
+<tr>
+<td>3️⃣ Crop</td>
+<td>✂️</td>
+<td>Trim to fit the audience and the context window.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hive-mind-agents">🐝 Hive Mind Agents</h4>
+<h5 id="slide-10-hive-workflow">Slide 10 — 🐝 Hive Workflow</h5>
+<p><em>Distributed Hive Mind Agentic Workflows (Controversial, Work in Progress)</em> <code>(orig #15)</code><br />
+🎬 Media: <code>slide10.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Agents</td>
+<td>🤖</td>
+<td>Many specialized agents share one memory.</td>
+</tr>
+<tr>
+<td>2️⃣ Debate</td>
+<td>⚔️</td>
+<td>Disagreement between agents is surfaced, not hidden.</td>
+</tr>
+<tr>
+<td>3️⃣ Caveat</td>
+<td>🚧</td>
+<td>Work in progress: show what works and what does not yet.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-11-hive-mind">Slide 11 — 🕸️ Hive Mind</h5>
+<p><em>Distributed Hive Minds</em> <code>(orig #35)</code><br />
+🎬 Media: <code>slide11.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Swarm</td>
+<td>🐝</td>
+<td>Collective intelligence emerges from simple, well-defined roles.</td>
+</tr>
+<tr>
+<td>2️⃣ Sync</td>
+<td>🔄</td>
+<td>Shared state keeps agents coherent.</td>
+</tr>
+<tr>
+<td>3️⃣ Risk</td>
+<td>⚠️</td>
+<td>Groupthink and drift need guardrails.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-12-lean-appdev">Slide 12 — 🚀 Lean AppDev</h5>
+<p><em>New, Novel Approaches to AppDev at Speed, Scale, and Minimal Cost</em> <code>(orig #37)</code><br />
+🎬 Media: <code>slide12.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Speed</td>
+<td>⚡</td>
+<td>Specification to running app in minutes.</td>
+</tr>
+<tr>
+<td>2️⃣ Scale</td>
+<td>📈</td>
+<td>Hundreds of single-file apps from reusable patterns.</td>
+</tr>
+<tr>
+<td>3️⃣ Cost</td>
+<td>💲</td>
+<td>Static hosting and in-browser compute keep costs low.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="specs-markdown">📝 Specs &amp; Markdown</h4>
+<h5 id="slide-13-markdown-specs">Slide 13 — 📝 Markdown Specs</h5>
+<p><em>Markdown Structures: Developing Great Specifications</em> <code>(orig #18)</code><br />
+🎬 Media: <code>slide13.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Headings</td>
+<td>#️⃣</td>
+<td>Heading hierarchy mirrors the system architecture.</td>
+</tr>
+<tr>
+<td>2️⃣ Tables</td>
+<td>📋</td>
+<td>Structured facts that a model can parse reliably.</td>
+</tr>
+<tr>
+<td>3️⃣ Checklists</td>
+<td>☑️</td>
+<td>Acceptance criteria become tests.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-14-prompt-patterns">Slide 14 — ♻️ Prompt Patterns</h5>
+<p><em>Reusable Prompt Spec Patterns</em> <code>(orig #24)</code><br />
+🎬 Media: <code>slide14.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Role</td>
+<td>🎭</td>
+<td>State who the model acts as.</td>
+</tr>
+<tr>
+<td>2️⃣ Inputs</td>
+<td>📥</td>
+<td>List the files, data, and constraints.</td>
+</tr>
+<tr>
+<td>3️⃣ Outputs</td>
+<td>📤</td>
+<td>Name the exact file type and structure expected.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-15-dataset-specs">Slide 15 — 🗃️ Dataset Specs</h5>
+<p><em>Datasets as a Reusable Markdown Spec Template</em> <code>(orig #28)</code><br />
+🎬 Media: <code>slide15.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Schema</td>
+<td>🧬</td>
+<td>Columns, types, and units.</td>
+</tr>
+<tr>
+<td>2️⃣ Source</td>
+<td>🔗</td>
+<td>Provenance and license.</td>
+</tr>
+<tr>
+<td>3️⃣ Sample</td>
+<td>🧾</td>
+<td>Five example rows for grounding.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-16-language-precedence">Slide 16 — 🔤 Language Precedence</h5>
+<p><em>Language Precedence: Which Keywords and File Types to Invest In</em> <code>(orig #17)</code><br />
+🎬 Media: <code>slide16.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Keywords</td>
+<td>🔑</td>
+<td>High-signal verbs and nouns steer models.</td>
+</tr>
+<tr>
+<td>2️⃣ Files</td>
+<td>📁</td>
+<td>.md, .html, and .py carry the most leverage.</td>
+</tr>
+<tr>
+<td>3️⃣ Order</td>
+<td>🔢</td>
+<td>Put the most important instruction first.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-17-speed-phrasing">Slide 17 — 🏎️ Speed Phrasing</h5>
+<p><em>Language Speed-Up Phrasing</em> <code>(orig #23)</code><br />
+🎬 Media: <code>slide17.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Short</td>
+<td>✂️</td>
+<td>Use fewer, stronger words.</td>
+</tr>
+<tr>
+<td>2️⃣ Emoji</td>
+<td>😀</td>
+<td>Emojis act as compact semantic anchors.</td>
+</tr>
+<tr>
+<td>3️⃣ Commands</td>
+<td>⌨️</td>
+<td>Lead with imperative verbs: create, list, render.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-18-nested-constraints">Slide 18 — 📦 Nested Constraints</h5>
+<p><em>Constraint-Based Modeling and Nested Boundaries</em> <code>(orig #19)</code><br />
+🎬 Media: <code>slide18.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Outer</td>
+<td>🌐</td>
+<td>System, security, and compliance limits.</td>
+</tr>
+<tr>
+<td>2️⃣ Middle</td>
+<td>🧱</td>
+<td>Application and data boundaries.</td>
+</tr>
+<tr>
+<td>3️⃣ Inner</td>
+<td>🎯</td>
+<td>Function-level rules and tests.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-19-asymptotic-reduction">Slide 19 — ⚛️ Asymptotic Reduction</h5>
+<p><em>First-Principles Asymptotic Reduction of Parts and Process Steps</em> <code>(orig #21)</code><br />
+🎬 Media: <code>slide19.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Question</td>
+<td>❓</td>
+<td>Ask whether each part needs to exist at all.</td>
+</tr>
+<tr>
+<td>2️⃣ Remove</td>
+<td>➖</td>
+<td>Delete steps until quality begins to drop.</td>
+</tr>
+<tr>
+<td>3️⃣ Converge</td>
+<td>📉</td>
+<td>Approach the minimum viable process.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-20-cms-age-groups">Slide 20 — 👪 CMS Age Groups</h5>
+<p><em>Representing Age Groups Using CMS Age Groups with Order, CMS Age Group, and Representative Emojis</em> <code>(orig #20)</code><br />
+🎬 Media: <code>slide20.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Order</td>
+<td>🔢</td>
+<td>A sort key keeps charts and tables consistent.</td>
+</tr>
+<tr>
+<td>2️⃣ Group</td>
+<td>🏷️</td>
+<td>Use the 12 CMS-HCC age bands (0–34 … 95+), sorted by Order.</td>
+</tr>
+<tr>
+<td>3️⃣ Emoji</td>
+<td>👶</td>
+<td>One representative emoji per band (👶 0–34 → 💯 95+) speeds comprehension.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CMS-HCC age bands (Order · CMS Age Group · Emoji)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Order</th>
+<th>CMS Age Group</th>
+<th>Emoji</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0–34</td>
+<td>👶</td>
+</tr>
+<tr>
+<td>2</td>
+<td>35–44</td>
+<td>🧑</td>
+</tr>
+<tr>
+<td>3</td>
+<td>45–54</td>
+<td>👨‍💼</td>
+</tr>
+<tr>
+<td>4</td>
+<td>55–59</td>
+<td>🧔</td>
+</tr>
+<tr>
+<td>5</td>
+<td>60–64</td>
+<td>👩‍🦳</td>
+</tr>
+<tr>
+<td>6</td>
+<td>65–69</td>
+<td>🧓</td>
+</tr>
+<tr>
+<td>7</td>
+<td>70–74</td>
+<td>👵</td>
+</tr>
+<tr>
+<td>8</td>
+<td>75–79</td>
+<td>👴</td>
+</tr>
+<tr>
+<td>9</td>
+<td>80–84</td>
+<td>🦯</td>
+</tr>
+<tr>
+<td>10</td>
+<td>85–89</td>
+<td>🧑‍🦽</td>
+</tr>
+<tr>
+<td>11</td>
+<td>90–94</td>
+<td>🎂</td>
+</tr>
+<tr>
+<td>12</td>
+<td>95+</td>
+<td>💯</td>
+</tr>
+</tbody>
+</table>
+<p>CMS-HCC age is measured as of February 1 of the payment year; each band is crossed with female/male to form 24 age-sex cells. In the community segments, bands 0–34 through 60–64 carry disabled (under-65) factors and 65–69 and up carry aged factors.<br />
+📚 Source: CMS, <a href="https://www.cms.gov/files/document/aco-reach-py2025-risk-adjustment.pdf">ACO REACH PY2025 Risk Adjustment (CMS-HCC model specification)</a> · CMS, <a href="https://www.cms.gov/files/document/revised-cms-hcc-model-relative-factor-tablespdf">Revised CMS-HCC Model Relative Factor Tables</a></p>
+<h4 id="python-html-delivery">🐍 Python &amp; HTML Delivery</h4>
+<h5 id="slide-21-streamlit-regions">Slide 21 — 🐍 Streamlit Regions</h5>
+<p><em>Python-Based Delivery Using Regions, Streamlit, and Markdown Specification-Led Instruction</em> <code>(orig #8)</code><br />
+🎬 Media: <code>slide21.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Regions</td>
+<td>🗺️</td>
+<td>Code is organized into named, swappable blocks.</td>
+</tr>
+<tr>
+<td>2️⃣ Streamlit</td>
+<td>🎈</td>
+<td>A Python UI in a single file.</td>
+</tr>
+<tr>
+<td>3️⃣ Spec-led</td>
+<td>📝</td>
+<td>A Markdown specification drives every region.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-22-region-architecture">Slide 22 — 🏗️ Region Architecture</h5>
+<p><em>What Regions Look Like in a Framed Application with 30K–40K Lines of Code (a Large Multiprocess, Multi-Agent System)</em> <code>(orig #9)</code><br />
+🎬 Media: <code>slide22.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Frame</td>
+<td>🖼️</td>
+<td>A stable shell hosts all regions.</td>
+</tr>
+<tr>
+<td>2️⃣ Process</td>
+<td>⚙️</td>
+<td>Agents run in parallel processes.</td>
+</tr>
+<tr>
+<td>3️⃣ Navigate</td>
+<td>🧭</td>
+<td>Region names make 30K+ lines searchable.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-23-stack-choices">Slide 23 — 🧰 Stack Choices</h5>
+<p><em>Languages, Libraries, Preferences, and Why</em> <code>(orig #10)</code><br />
+🎬 Media: <code>slide23.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Python</td>
+<td>🐍</td>
+<td>Data, ML, and back-end glue.</td>
+</tr>
+<tr>
+<td>2️⃣ JavaScript</td>
+<td>🟨</td>
+<td>Browser-native UI and real-time IO.</td>
+</tr>
+<tr>
+<td>3️⃣ Markdown</td>
+<td>📝</td>
+<td>The universal format for specifications and memory.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-24-html-python">Slide 24 — ⚖️ HTML + Python</h5>
+<p><em>Trade-offs Between HTML and Python, and Using Them Together</em> <code>(orig #11)</code><br />
+🎬 Media: <code>slide24.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ HTML</td>
+<td>🌐</td>
+<td>Zero install; runs anywhere a browser runs.</td>
+</tr>
+<tr>
+<td>2️⃣ Python</td>
+<td>🐍</td>
+<td>Rich libraries and server-side power.</td>
+</tr>
+<tr>
+<td>3️⃣ Together</td>
+<td>🤝</td>
+<td>Python produces the data; HTML presents it.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-25-single-file-apps">Slide 25 — 📄 Single-File Apps</h5>
+<p><em>Patterns of Outward-Facing Single-File Work</em> <code>(orig #25)</code><br />
+🎬 Media: <code>slide25.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ One file</td>
+<td>📄</td>
+<td>Everything lives in one shareable artifact.</td>
+</tr>
+<tr>
+<td>2️⃣ Portable</td>
+<td>📨</td>
+<td>Email it, host it, or open it locally.</td>
+</tr>
+<tr>
+<td>3️⃣ Reviewable</td>
+<td>👀</td>
+<td>Easy for humans and AIs to read in full.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-26-daredevil-speed">Slide 26 — 😈 Daredevil Speed</h5>
+<p><em>Daredevil It: First Contact to Runnable Solutions in Under Five Minutes (Runnable Graphs as First Output; MD → HTML → Python)</em> <code>(orig #16)</code><br />
+🎬 Media: <code>slide26.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ 5 minutes</td>
+<td>⏱️</td>
+<td>Runnable output before the meeting ends.</td>
+</tr>
+<tr>
+<td>2️⃣ Graph first</td>
+<td>📊</td>
+<td>Show a working chart, not a slide.</td>
+</tr>
+<tr>
+<td>3️⃣ Pipeline</td>
+<td>🔀</td>
+<td>MD → HTML → Python.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-27-github-pages">Slide 27 — 📃 GitHub Pages</h5>
+<p><em>The GitHub Pages Pattern</em> <code>(orig #26)</code><br />
+🎬 Media: <code>slide27.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Commit</td>
+<td>💾</td>
+<td>Push HTML files to a repository.</td>
+</tr>
+<tr>
+<td>2️⃣ Publish</td>
+<td>🌍</td>
+<td>GitHub Pages serves them as a public site.</td>
+</tr>
+<tr>
+<td>3️⃣ Share</td>
+<td>🔗</td>
+<td>One URL per app (for example, on allaiinc.org).</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-28-actions-deploy">Slide 28 — ⚙️ Actions Deploy</h5>
+<p><em>GitHub → Actions → HTML/JS App</em> <code>(orig #42)</code><br />
+🎬 Media: <code>slide28.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Trigger</td>
+<td>🔔</td>
+<td>A push runs the workflow.</td>
+</tr>
+<tr>
+<td>2️⃣ Build</td>
+<td>🛠️</td>
+<td>GitHub Actions deploys the static files.</td>
+</tr>
+<tr>
+<td>3️⃣ Live</td>
+<td>🟢</td>
+<td>The HTML/JS app updates within minutes.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-29-video-to-app">Slide 29 — 🎬 Video-to-App</h5>
+<p><em>Demo Video → Transcript → Markdown Spec → HTML App with All IO → Video Out</em> <code>(orig #41)</code><br />
+🎬 Media: <code>slide29.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Capture</td>
+<td>🎥</td>
+<td>Record the demo or meeting.</td>
+</tr>
+<tr>
+<td>2️⃣ Transform</td>
+<td>📝</td>
+<td>The transcript becomes a Markdown specification.</td>
+</tr>
+<tr>
+<td>3️⃣ Produce</td>
+<td>🖥️</td>
+<td>Build an HTML app with full IO, then output a video.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="models-ops-telemetry">📊 Models, Ops &amp; Telemetry</h4>
+<h5 id="slide-30-model-assets">Slide 30 — 🧩 Model Assets</h5>
+<p><em>AI Sets, Models, and Assets: Scale, Cost, and Delivery</em> <code>(orig #7)</code><br />
+🎬 Media: <code>slide30.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Sets</td>
+<td>🗂️</td>
+<td>Group models by task and tier.</td>
+</tr>
+<tr>
+<td>2️⃣ Cost</td>
+<td>💲</td>
+<td>Route each task to the cheapest model that is good enough.</td>
+</tr>
+<tr>
+<td>3️⃣ Delivery</td>
+<td>🚚</td>
+<td>Package assets for reuse across teams.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-31-model-qualification">Slide 31 — 🧪 Model Qualification</h5>
+<p><em>Per-Model Qualification of Assets, Memory, Gaps, Upgrades, Drift, and Resilience</em> <code>(orig #12)</code><br />
+🎬 Media: <code>slide31.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Qualify</td>
+<td>✅</td>
+<td>Test each model against your golden set.</td>
+</tr>
+<tr>
+<td>2️⃣ Drift</td>
+<td>📉</td>
+<td>Re-run the tests whenever a model updates.</td>
+</tr>
+<tr>
+<td>3️⃣ Resilience</td>
+<td>🛡️</td>
+<td>Keep a qualified fallback model ready.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-32-puck-strategy">Slide 32 — 🏒 Puck Strategy</h5>
+<p><em>Model Efficiency Gains, Performance Measurement, and How to Play Where the Puck Is Headed</em> <code>(orig #13)</code><br />
+🎬 Media: <code>slide32.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Measure</td>
+<td>📏</td>
+<td>Latency, cost, and quality per task.</td>
+</tr>
+<tr>
+<td>2️⃣ Anticipate</td>
+<td>🔭</td>
+<td>Design for the next generation of model capabilities.</td>
+</tr>
+<tr>
+<td>3️⃣ Swap</td>
+<td>🔄</td>
+<td>Keep models replaceable.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-33-aiops-telemetry">Slide 33 — 📡 AIOps Telemetry</h5>
+<p><em>Patterns and Telemetry in AIOps</em> <code>(orig #27)</code><br />
+🎬 Media: <code>slide33.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Signals</td>
+<td>📶</td>
+<td>Logs, metrics, and traces.</td>
+</tr>
+<tr>
+<td>2️⃣ Patterns</td>
+<td>🧭</td>
+<td>Detect anomalies and recurring failures.</td>
+</tr>
+<tr>
+<td>3️⃣ Integrity</td>
+<td>🔐</td>
+<td>Protect telemetry from tampering and manipulation.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="protocols-frontier-tools">🌐 Protocols &amp; Frontier Tools</h4>
+<h5 id="slide-34-mcp-a2a">Slide 34 — 🔌 MCP + A2A</h5>
+<p><em>Frontier AI Systems, Multimodal AI Tools, and Protocols and Standards: MCP and A2A</em> <code>(orig #39)</code><br />
+🎬 Media: <code>slide34.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ MCP</td>
+<td>🔌</td>
+<td>Connects models to tools and data sources.</td>
+</tr>
+<tr>
+<td>2️⃣ A2A</td>
+<td>🤝</td>
+<td>Lets agents communicate with other agents.</td>
+</tr>
+<tr>
+<td>3️⃣ Multimodal</td>
+<td>🖼️</td>
+<td>Text, image, audio, and video in one loop.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-35-ai-in-the-wild">Slide 35 — 🌍 AI in the Wild</h5>
+<p><em>AI in the Wild: GPT, Gemini, Grok, Claude, Meta, HeyGen, GitHub Actions/Pages/Copilot/Repos, Runnable Memory, Public Internet Apps, and Live MCP and Tools</em> <code>(orig #40)</code><br />
+🎬 Media: <code>slide35.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Models</td>
+<td>🤖</td>
+<td>Compare frontier assistants on the same prompt.</td>
+</tr>
+<tr>
+<td>2️⃣ Platforms</td>
+<td>🐙</td>
+<td>GitHub hosts, builds, and shares the results.</td>
+</tr>
+<tr>
+<td>3️⃣ Live</td>
+<td>🟢</td>
+<td>Public apps with runnable memory and live tools.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-36-copy-paste-flow">Slide 36 — 📋 Copy-Paste Flow</h5>
+<p><em>Dev Tools for Developers, GitHub, and AI: Copy/Paste Across Browser Tabs and Apps</em> <code>(orig #38)</code><br />
+🎬 Media: <code>slide36.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Tabs</td>
+<td>🗂️</td>
+<td>Models, repository, and app side by side.</td>
+</tr>
+<tr>
+<td>2️⃣ Clipboard</td>
+<td>📋</td>
+<td>Copy/paste is the universal API.</td>
+</tr>
+<tr>
+<td>3️⃣ Loop</td>
+<td>🔁</td>
+<td>Paste output, run it, and paste errors back.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="real-time-browser-io">🎥 Real-Time Browser IO</h4>
+<h5 id="slide-37-browser-sensing">Slide 37 — 🎥 Browser Sensing</h5>
+<p><em>Real-Time Human Sensing in the Browser: SSL, WebRTC, PeerJS, Multiuser, Video Capture and Playback, Cameras, Screens, Speech Transcription (STT), Speaker IO, Speech Synthesis, TF.js, Browser Voice Standards, and MediaPipe Face Mesh, Hand, and Body Tracking</em> <code>(orig #43)</code><br />
+🎬 Media: <code>slide37.mp4</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Connect</td>
+<td>📡</td>
+<td>WebRTC and PeerJS enable multiuser video over HTTPS.</td>
+</tr>
+<tr>
+<td>2️⃣ Listen</td>
+<td>🎙️</td>
+<td>The Web Speech API provides STT and speech synthesis.</td>
+</tr>
+<tr>
+<td>3️⃣ See</td>
+<td>🖐️</td>
+<td>MediaPipe and TF.js track faces, hands, and bodies.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="azure-infrastructure">☁️ Azure &amp; Infrastructure</h4>
+<h5 id="slide-38-secure-setup">Slide 38 — 🔐 Secure Setup</h5>
+<p><em>Setup Process, Automation of First Principles, Minimal Necessary Footprint, Security, and Architecture</em> <code>(orig #44)</code><br />
+🎬 Media: <code>slide38.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Automate</td>
+<td>🤖</td>
+<td>Script the setup from first principles.</td>
+</tr>
+<tr>
+<td>2️⃣ Minimal</td>
+<td>➖</td>
+<td>Install only what is necessary.</td>
+</tr>
+<tr>
+<td>3️⃣ Secure</td>
+<td>🛡️</td>
+<td>Least privilege and MFA by default.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-39-hardware-networks">Slide 39 — 🖥️ Hardware &amp; Networks</h5>
+<p><em>Hardware and Networks</em> <code>(orig #45)</code><br />
+🎬 Media: <code>slide39.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Compute</td>
+<td>🖥️</td>
+<td>Local GPU, cloud, or browser.</td>
+</tr>
+<tr>
+<td>2️⃣ Network</td>
+<td>🌐</td>
+<td>Bandwidth and latency shape real-time AI.</td>
+</tr>
+<tr>
+<td>3️⃣ Edge</td>
+<td>📱</td>
+<td>Run small models close to the user.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-40-network-activation">Slide 40 — 📶 Network Activation</h5>
+<p><em>Network Process Activation</em> <code>(orig #46)</code><br />
+🎬 Media: <code>slide40.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Discover</td>
+<td>🔎</td>
+<td>Inventory services and endpoints.</td>
+</tr>
+<tr>
+<td>2️⃣ Connect</td>
+<td>🔗</td>
+<td>Authenticate and open only the required ports.</td>
+</tr>
+<tr>
+<td>3️⃣ Verify</td>
+<td>✅</td>
+<td>Health checks confirm the network is live.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-41-software-factory">Slide 41 — 🏭 Software Factory</h5>
+<p><em>Agentic Azure Software Factory Activation</em> <code>(orig #47)</code><br />
+🎬 Media: <code>slide41.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Pipeline</td>
+<td>🏭</td>
+<td>Agents generate, test, and deploy.</td>
+</tr>
+<tr>
+<td>2️⃣ Gates</td>
+<td>🚦</td>
+<td>Humans review at key checkpoints.</td>
+</tr>
+<tr>
+<td>3️⃣ Azure</td>
+<td>☁️</td>
+<td>Managed identities, containers, and DevOps pipelines.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-42-azure-sync">Slide 42 — 🔄 Azure Sync</h5>
+<p><em>Azure Synchronization</em> <code>(orig #48)</code><br />
+🎬 Media: <code>slide42.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Source</td>
+<td>🐙</td>
+<td>GitHub is the source of truth.</td>
+</tr>
+<tr>
+<td>2️⃣ Mirror</td>
+<td>🔁</td>
+<td>Synchronize to Azure repositories and resources.</td>
+</tr>
+<tr>
+<td>3️⃣ Consistency</td>
+<td>✅</td>
+<td>Detect and resolve configuration drift.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-43-containers-mfa">Slide 43 — 🐳 Containers + MFA</h5>
+<p><em>Mixing Complex Python and Azure Patterns for Containers and MFA</em> <code>(orig #33)</code><br />
+🎬 Media: <code>slide43.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Containers</td>
+<td>🐳</td>
+<td>Package Python apps reproducibly.</td>
+</tr>
+<tr>
+<td>2️⃣ Identity</td>
+<td>🔐</td>
+<td>MFA and managed identities protect access.</td>
+</tr>
+<tr>
+<td>3️⃣ Config</td>
+<td>⚙️</td>
+<td>Validated templates prevent misconfiguration.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-44-platform-swot">Slide 44 — 🧭 Platform SWOT</h5>
+<p><em>Web SWOT, Python SWOT, and Azure SWOT</em> <code>(orig #32)</code><br />
+🎬 Media: <code>slide44.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Web</td>
+<td>🌐</td>
+<td>Strength: zero install. Weakness: browser sandbox limits.</td>
+</tr>
+<tr>
+<td>2️⃣ Python</td>
+<td>🐍</td>
+<td>Strength: libraries. Weakness: deployment friction.</td>
+</tr>
+<tr>
+<td>3️⃣ Azure</td>
+<td>☁️</td>
+<td>Strength: enterprise security. Weakness: setup complexity.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pair-programming-engagement">🤝 Pair Programming &amp; Engagement</h4>
+<h5 id="slide-45-ai-assets">Slide 45 — 🧑‍💻 AI Assets</h5>
+<p><em>Defining AI Assets and AI Pair Programming</em> <code>(orig #5)</code><br />
+🎬 Media: <code>slide45.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Assets</td>
+<td>💎</td>
+<td>Prompts, specifications, apps, data, and memory.</td>
+</tr>
+<tr>
+<td>2️⃣ Pair</td>
+<td>👥</td>
+<td>The human sets intent; the AI drafts and iterates.</td>
+</tr>
+<tr>
+<td>3️⃣ Reuse</td>
+<td>♻️</td>
+<td>Every session leaves a reusable asset behind.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-46-traditional-vs-ai">Slide 46 — 🆚 Traditional vs. AI</h5>
+<p><em>AI Pair Programming: Traditional vs. AI Method</em> <code>(orig #29)</code><br />
+🎬 Media: <code>slide46.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Traditional</td>
+<td>👨‍💻</td>
+<td>Two humans share one keyboard.</td>
+</tr>
+<tr>
+<td>2️⃣ AI method</td>
+<td>🤖</td>
+<td>One human directs several models.</td>
+</tr>
+<tr>
+<td>3️⃣ Shift</td>
+<td>🔀</td>
+<td>From typing code to reviewing and steering it.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-47-code-integration">Slide 47 — 🔗 Code Integration</h5>
+<p><em>AI Code Integration for AI Pair Programming</em> <code>(orig #49)</code><br />
+🎬 Media: <code>slide47.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Merge</td>
+<td>🔀</td>
+<td>Integrate AI-written code through pull requests.</td>
+</tr>
+<tr>
+<td>2️⃣ Test</td>
+<td>🧪</td>
+<td>Run automated checks before every merge.</td>
+</tr>
+<tr>
+<td>3️⃣ Own</td>
+<td>🧑‍⚖️</td>
+<td>Humans remain accountable for shipped code.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-48-steel-man">Slide 48 — 🧠 Steel Man</h5>
+<p><em>Trade-offs for Opportunity Judgment with SWOT and Steel Man/Straw Man</em> <code>(orig #31)</code><br />
+🎬 Media: <code>slide48.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ SWOT</td>
+<td>🧭</td>
+<td>Strengths, weaknesses, opportunities, and threats.</td>
+</tr>
+<tr>
+<td>2️⃣ Steel man</td>
+<td>🛡️</td>
+<td>Argue the strongest version of the opposing case.</td>
+</tr>
+<tr>
+<td>3️⃣ Straw man</td>
+<td>🪵</td>
+<td>Name the weak version so you can avoid it.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="slide-49-engagement">Slide 49 — 🎤 Engagement</h5>
+<p><em>Engagement Tips</em> <code>(orig #30)</code><br />
+🎬 Media: <code>slide49.png</code></p>
+<table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Emoji</th>
+<th>Key Idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣ Demo</td>
+<td>🎬</td>
+<td>Show live, runnable work.</td>
+</tr>
+<tr>
+<td>2️⃣ Ask</td>
+<td>❓</td>
+<td>Invite one question per section.</td>
+</tr>
+<tr>
+<td>3️⃣ Close</td>
+<td>🎯</td>
+<td>End with a call to action and a link.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-2-reference-table">Part 2 — Reference Table</h2>
+<p>Every arXiv entry below was checked against the arXiv API (<code>export.arxiv.org/api/query?id_list=…</code>), and each title was copied from the API response. Each PDF link returned HTTP 200 on 2026-10-17. <strong>46 verified papers, 3 n/a.</strong> All verified papers were published in 2025–2026. Note that many are matched on title keywords, so skim each abstract before citing it on a slide.</p>
+<p>YouTube: <strong>11 videos verified</strong> through YouTube oEmbed (the title and channel match), and each is a widely viewed talk. Every other cell is a clearly labeled <strong>🔎 search</strong> link, not a specific video.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Emoji</th>
+<th>Topic keywords</th>
+<th>arXiv paper title</th>
+<th>arXiv PDF</th>
+<th>YouTube talk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>💗</td>
+<td>Compassionate Care (orig #1)</td>
+<td>Can "AI" Be a Doctor? A Study of Empathy, Readability, and Alignment in Clinical LLMs</td>
+<td><a href="https://arxiv.org/pdf/2604.20791">pdf</a> · <a href="https://arxiv.org/abs/2604.20791">abs</a> (2026-04)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4">How Great Leaders Inspire Action — Simon Sinek (TED)</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>🏥</td>
+<td>Better Care (orig #4)</td>
+<td>A Comprehensive Survey on the Trustworthiness of Large Language Models in Healthcare</td>
+<td><a href="https://arxiv.org/pdf/2502.15871">pdf</a> · <a href="https://arxiv.org/abs/2502.15871">abs</a> (2025-02)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Better+Care+talk">search: Better Care talk</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>📏</td>
+<td>Value Metrics (orig #14)</td>
+<td>Learning from Disagreement: Clinician Overrides as Implicit Preference Signals for Clinical AI in Value-Based Care</td>
+<td><a href="https://arxiv.org/pdf/2604.28010">pdf</a> · <a href="https://arxiv.org/abs/2604.28010">abs</a> (2026-04)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Value+Metrics+talk">search: Value Metrics talk</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>⚡</td>
+<td>Dual Speed (orig #3)</td>
+<td>Intuition to Evidence: Measuring AI's True Impact on Developer Productivity</td>
+<td><a href="https://arxiv.org/pdf/2509.19708">pdf</a> · <a href="https://arxiv.org/abs/2509.19708">abs</a> (2025-09)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Dual+Speed+talk">search: Dual Speed talk</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>📈</td>
+<td>Progressive Patterns (orig #2)</td>
+<td>MedCache: Efficient and Temporally Valid Memory for Longitudinal Clinical Agents</td>
+<td><a href="https://arxiv.org/pdf/2608.29528">pdf</a> · <a href="https://arxiv.org/abs/2608.29528">abs</a> (2026-08)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Progressive+Patterns+talk">search: Progressive Patterns talk</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>🕰️</td>
+<td>Longitudinal Intelligence (orig #36)</td>
+<td>CliniCIRCA: A Modular LLM Framework for Constructing Longitudinal Mental Health Patient Journeys from Raw EHR Narratives</td>
+<td><a href="https://arxiv.org/pdf/2609.19585">pdf</a> · <a href="https://arxiv.org/abs/2609.19585">abs</a> (2026-09)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Longitudinal+Intelligence+talk">search: Longitudinal Intelligence talk</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>🧠</td>
+<td>Agent Memory (orig #6)</td>
+<td>SYNAPSE: Empowering LLM Agents with Episodic-Semantic Memory via Spreading Activation</td>
+<td><a href="https://arxiv.org/pdf/2601.02744">pdf</a> · <a href="https://arxiv.org/abs/2601.02744">abs</a> (2026-01)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">[1hr Talk] Intro to Large Language Models — Andrej Karpathy</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>🗂️</td>
+<td>Memory Curation (orig #34)</td>
+<td>What to Keep, What to Forget: A Rate--Distortion View of Memory Compaction in LLMs and Agents</td>
+<td><a href="https://arxiv.org/pdf/2607.08032">pdf</a> · <a href="https://arxiv.org/abs/2607.08032">abs</a> (2026-07)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Memory+Curation+talk">search: Memory Curation talk</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>✂️</td>
+<td>Distill-Merge-Crop (orig #22)</td>
+<td>ACON: Optimizing Context Compression for Long-horizon LLM Agents</td>
+<td><a href="https://arxiv.org/pdf/2510.00615">pdf</a> · <a href="https://arxiv.org/abs/2510.00615">abs</a> (2025-10)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Distill-Merge-Crop+talk">search: Distill-Merge-Crop talk</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>🐝</td>
+<td>Hive Workflow (orig #15)</td>
+<td>OpenHospital: A Thing-in-itself Arena for Evolving and Benchmarking LLM-based Collective Intelligence</td>
+<td><a href="https://arxiv.org/pdf/2603.14771">pdf</a> · <a href="https://arxiv.org/abs/2603.14771">abs</a> (2026-03)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=sal78ACtGTc">What's next for AI agentic workflows ft. Andrew Ng — Sequoia Capital</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>🕸️</td>
+<td>Hive Mind (orig #35)</td>
+<td>When Is Collective Intelligence a Lottery? Multi-Agent Scaling Laws for Memetic Drift in LLMs</td>
+<td><a href="https://arxiv.org/pdf/2603.24676">pdf</a> · <a href="https://arxiv.org/abs/2603.24676">abs</a> (2026-03)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=4pYzYmSdSH4">Andrew Ng: State of AI Agents — LangChain Interrupt</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>🚀</td>
+<td>Lean AppDev (orig #37)</td>
+<td>Position: Vibe Coding Needs Vibe Reasoning: Improving Vibe Coding with Formal Verification</td>
+<td><a href="https://arxiv.org/pdf/2511.00202">pdf</a> · <a href="https://arxiv.org/abs/2511.00202">abs</a> (2025-10)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=LCEmiRjPEtQ">Andrej Karpathy: Software Is Changing (Again) — Y Combinator</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>📝</td>
+<td>Markdown Specs (orig #18)</td>
+<td>MDKeyChunker: What Does One LLM Call per Chunk Buy for Markdown Retrieval?</td>
+<td><a href="https://arxiv.org/pdf/2603.23533">pdf</a> · <a href="https://arxiv.org/abs/2603.23533">abs</a> (2026-03)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Markdown+Specs+talk">search: Markdown Specs talk</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>♻️</td>
+<td>Prompt Patterns (orig #24)</td>
+<td>A Taxonomy of Single-Turn Textual Prompt Patterns</td>
+<td><a href="https://arxiv.org/pdf/2607.00043">pdf</a> · <a href="https://arxiv.org/abs/2607.00043">abs</a> (2026-06)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Prompt+Patterns+talk">search: Prompt Patterns talk</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>🗃️</td>
+<td>Dataset Specs (orig #28)</td>
+<td>Datasheets for AI and medical datasets (DAIMS): a data validation and documentation framework before machine learning analysis in medical research</td>
+<td><a href="https://arxiv.org/pdf/2501.14094">pdf</a> · <a href="https://arxiv.org/abs/2501.14094">abs</a> (2025-01)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Dataset+Specs+talk">search: Dataset Specs talk</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td>🔤</td>
+<td>Language Precedence (orig #17)</td>
+<td>LangChoiceBench: Measuring and Explaining Programming-Language Choice in LLMs</td>
+<td><a href="https://arxiv.org/pdf/2608.06041">pdf</a> · <a href="https://arxiv.org/abs/2608.06041">abs</a> (2026-08)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Language+Precedence+talk">search: Language Precedence talk</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>🏎️</td>
+<td>Speed Phrasing (orig #23)</td>
+<td>SCOPE: A Generative Approach for LLM Prompt Compression</td>
+<td><a href="https://arxiv.org/pdf/2508.15813">pdf</a> · <a href="https://arxiv.org/abs/2508.15813">abs</a> (2025-08)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Speed+Phrasing+talk">search: Speed Phrasing talk</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>📦</td>
+<td>Nested Constraints (orig #19)</td>
+<td>Opti-Q: A Constraint-Based Optimization Framework for Multi-LLM Question Planning</td>
+<td><a href="https://arxiv.org/pdf/2607.22621">pdf</a> · <a href="https://arxiv.org/abs/2607.22621">abs</a> (2026-06)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Nested+Constraints+talk">search: Nested Constraints talk</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>⚛️</td>
+<td>Asymptotic Reduction (orig #21)</td>
+<td>Rosetta: Automating First-Principles Performance Modeling Using Multi-Agent LLMs</td>
+<td><a href="https://arxiv.org/pdf/2609.19376">pdf</a> · <a href="https://arxiv.org/abs/2609.19376">abs</a> (2026-09)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Let's build GPT: from scratch, in code, spelled out — Andrej Karpathy</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>👪</td>
+<td>CMS Age Groups (orig #20)</td>
+<td>n/a – search: CMS age groups Medicare machine learning</td>
+<td><a href="https://arxiv.org/search/?searchtype=all&amp;query=CMS+age+groups+Medicare+machine+learning">arXiv search</a></td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=CMS+Age+Groups+talk">search: CMS Age Groups talk</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td>🐍</td>
+<td>Streamlit Regions (orig #8)</td>
+<td>Deep Energy Method with Large Language Model assistance: an open-source Streamlit-based platform for solving variational PDEs</td>
+<td><a href="https://arxiv.org/pdf/2602.07838">pdf</a> · <a href="https://arxiv.org/abs/2602.07838">abs</a> (2026-02)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Streamlit+Regions+talk">search: Streamlit Regions talk</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>🏗️</td>
+<td>Region Architecture (orig #9)</td>
+<td>TheBotCompany: Self-Organizing Multi-agent Systems for Continuous Software Development</td>
+<td><a href="https://arxiv.org/pdf/2603.25928">pdf</a> · <a href="https://arxiv.org/abs/2603.25928">abs</a> (2026-03)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Region+Architecture+talk">search: Region Architecture talk</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>🧰</td>
+<td>Stack Choices (orig #10)</td>
+<td>A Study of LLMs' Preferences for Libraries and Programming Languages</td>
+<td><a href="https://arxiv.org/pdf/2503.17181">pdf</a> · <a href="https://arxiv.org/abs/2503.17181">abs</a> (2025-03)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Stack+Choices+talk">search: Stack Choices talk</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>⚖️</td>
+<td>HTML + Python (orig #11)</td>
+<td>MiniAppBench: Evaluating the Shift from Text to Interactive HTML Responses in LLM-Powered Assistants</td>
+<td><a href="https://arxiv.org/pdf/2603.09652">pdf</a> · <a href="https://arxiv.org/abs/2603.09652">abs</a> (2026-03)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=HTML+%2B+Python+talk">search: HTML + Python talk</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td>📄</td>
+<td>Single-File Apps (orig #25)</td>
+<td>HTMLCure: Turning Browser Experience into State Guided Repair for Interactive HTML</td>
+<td><a href="https://arxiv.org/pdf/2605.26807">pdf</a> · <a href="https://arxiv.org/abs/2605.26807">abs</a> (2026-05)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Single-File+Apps+talk">search: Single-File Apps talk</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>😈</td>
+<td>Daredevil Speed (orig #16)</td>
+<td>Usable but Conventional: An Empirical Study on the UX of AI-Generated Interface Prototypes</td>
+<td><a href="https://arxiv.org/pdf/2605.15124">pdf</a> · <a href="https://arxiv.org/abs/2605.15124">abs</a> (2026-05)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Daredevil+Speed+talk">search: Daredevil Speed talk</a></td>
+</tr>
+<tr>
+<td>27</td>
+<td>📃</td>
+<td>GitHub Pages (orig #26)</td>
+<td>n/a – search: GitHub Pages static site LLM</td>
+<td><a href="https://arxiv.org/search/?searchtype=all&amp;query=GitHub+Pages+static+site+LLM">arXiv search</a></td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=GitHub+Pages+talk">search: GitHub Pages talk</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td>⚙️</td>
+<td>Actions Deploy (orig #42)</td>
+<td>Can LLMs Write CI? A Study on Automatic Generation of GitHub Actions Configurations</td>
+<td><a href="https://arxiv.org/pdf/2507.17165">pdf</a> · <a href="https://arxiv.org/abs/2507.17165">abs</a> (2025-07)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Actions+Deploy+talk">search: Actions Deploy talk</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td>🎬</td>
+<td>Video-to-App (orig #41)</td>
+<td>Code2Video: A Code-centric Paradigm for Educational Video Generation</td>
+<td><a href="https://arxiv.org/pdf/2510.01174">pdf</a> · <a href="https://arxiv.org/abs/2510.01174">abs</a> (2025-10)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Video-to-App+talk">search: Video-to-App talk</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td>🧩</td>
+<td>Model Assets (orig #7)</td>
+<td>A Cost-Benefit Analysis of On-Premise Large Language Model Deployment: Breaking Even with Commercial LLM Services</td>
+<td><a href="https://arxiv.org/pdf/2509.18101">pdf</a> · <a href="https://arxiv.org/abs/2509.18101">abs</a> (2025-08)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=wjZofJX0v4M">Transformers, the tech behind LLMs — 3Blue1Brown</a></td>
+</tr>
+<tr>
+<td>31</td>
+<td>🧪</td>
+<td>Model Qualification (orig #12)</td>
+<td>Memory-Induced Tool-Drift in LLM Agents</td>
+<td><a href="https://arxiv.org/pdf/2605.24941">pdf</a> · <a href="https://arxiv.org/abs/2605.24941">abs</a> (2026-05)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Model+Qualification+talk">search: Model Qualification talk</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td>🏒</td>
+<td>Puck Strategy (orig #13)</td>
+<td>Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs</td>
+<td><a href="https://arxiv.org/pdf/2510.18245">pdf</a> · <a href="https://arxiv.org/abs/2510.18245">abs</a> (2025-10)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Puck+Strategy+talk">search: Puck Strategy talk</a></td>
+</tr>
+<tr>
+<td>33</td>
+<td>📡</td>
+<td>AIOps Telemetry (orig #27)</td>
+<td>When AIOps Become "AI Oops": Subverting LLM-driven IT Operations via Telemetry Manipulation</td>
+<td><a href="https://arxiv.org/pdf/2508.06394">pdf</a> · <a href="https://arxiv.org/abs/2508.06394">abs</a> (2025-08)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=AIOps+Telemetry+talk">search: AIOps Telemetry talk</a></td>
+</tr>
+<tr>
+<td>34</td>
+<td>🔌</td>
+<td>MCP + A2A (orig #39)</td>
+<td>A survey of agent interoperability protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)</td>
+<td><a href="https://arxiv.org/pdf/2505.02279">pdf</a> · <a href="https://arxiv.org/abs/2505.02279">abs</a> (2025-05)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=kQmXtrmQ5Zg">Building Agents with Model Context Protocol — Mahesh Murag (Anthropic), AI Engineer</a></td>
+</tr>
+<tr>
+<td>35</td>
+<td>🌍</td>
+<td>AI in the Wild (orig #40)</td>
+<td>Agentic Coding in the Wild: Characterizing GitHub Copilot Traces at Production Scale</td>
+<td><a href="https://arxiv.org/pdf/2608.00101">pdf</a> · <a href="https://arxiv.org/abs/2608.00101">abs</a> (2026-07)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=7xTGNNLPyMI">Deep Dive into LLMs like ChatGPT — Andrej Karpathy</a></td>
+</tr>
+<tr>
+<td>36</td>
+<td>📋</td>
+<td>Copy-Paste Flow (orig #38)</td>
+<td>Do Not Copy/Paste: Soft Barriers for Copying in AI-Assisted Programming</td>
+<td><a href="https://arxiv.org/pdf/2608.22638">pdf</a> · <a href="https://arxiv.org/abs/2608.22638">abs</a> (2026-08)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Copy-Paste+Flow+talk">search: Copy-Paste Flow talk</a></td>
+</tr>
+<tr>
+<td>37</td>
+<td>🎥</td>
+<td>Browser Sensing (orig #43)</td>
+<td>A Generic Web Component for WebRTC Pub-Sub</td>
+<td><a href="https://arxiv.org/pdf/2602.22011">pdf</a> · <a href="https://arxiv.org/abs/2602.22011">abs</a> (2026-02)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=WmR9IMUD_CY">WebRTC in 100 Seconds — Fireship</a></td>
+</tr>
+<tr>
+<td>38</td>
+<td>🔐</td>
+<td>Secure Setup (orig #44)</td>
+<td>SafeHarness: Lifecycle-Integrated Security Architecture for LLM-based Agent Deployment</td>
+<td><a href="https://arxiv.org/pdf/2604.13630">pdf</a> · <a href="https://arxiv.org/abs/2604.13630">abs</a> (2026-04)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Secure+Setup+talk">search: Secure Setup talk</a></td>
+</tr>
+<tr>
+<td>39</td>
+<td>🖥️</td>
+<td>Hardware &amp; Networks (orig #45)</td>
+<td>A Measurement Study of LLM Inference Trade-offs Across Edge Continuum Hardware</td>
+<td><a href="https://arxiv.org/pdf/2609.08307">pdf</a> · <a href="https://arxiv.org/abs/2609.08307">abs</a> (2026-09)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Hardware+%26+Networks+talk">search: Hardware &amp; Networks talk</a></td>
+</tr>
+<tr>
+<td>40</td>
+<td>📶</td>
+<td>Network Activation (orig #46)</td>
+<td>LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization</td>
+<td><a href="https://arxiv.org/pdf/2607.16066">pdf</a> · <a href="https://arxiv.org/abs/2607.16066">abs</a> (2026-07)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Network+Activation+talk">search: Network Activation talk</a></td>
+</tr>
+<tr>
+<td>41</td>
+<td>🏭</td>
+<td>Software Factory (orig #47)</td>
+<td>(When) Should a Software Factory be Lights-off? Benchmarking Code Review Agents on Bug Detection</td>
+<td><a href="https://arxiv.org/pdf/2610.13668">pdf</a> · <a href="https://arxiv.org/abs/2610.13668">abs</a> (2026-10)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Software+Factory+talk">search: Software Factory talk</a></td>
+</tr>
+<tr>
+<td>42</td>
+<td>🔄</td>
+<td>Azure Sync (orig #48)</td>
+<td>Hallucination as Context Drift: Synchronization Protocols for Multi-Agent LLM Systems</td>
+<td><a href="https://arxiv.org/pdf/2606.21666">pdf</a> · <a href="https://arxiv.org/abs/2606.21666">abs</a> (2026-06)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Azure+Sync+talk">search: Azure Sync talk</a></td>
+</tr>
+<tr>
+<td>43</td>
+<td>🐳</td>
+<td>Containers + MFA (orig #33)</td>
+<td>LLMSecConfig: An LLM-Based Approach for Fixing Software Container Misconfigurations</td>
+<td><a href="https://arxiv.org/pdf/2502.02009">pdf</a> · <a href="https://arxiv.org/abs/2502.02009">abs</a> (2025-02)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Containers+%2B+MFA+talk">search: Containers + MFA talk</a></td>
+</tr>
+<tr>
+<td>44</td>
+<td>🧭</td>
+<td>Platform SWOT (orig #32)</td>
+<td>n/a – search: SWOT analysis web Python Azure cloud</td>
+<td><a href="https://arxiv.org/search/?searchtype=all&amp;query=SWOT+analysis+web+Python+Azure+cloud">arXiv search</a></td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Platform+SWOT+talk">search: Platform SWOT talk</a></td>
+</tr>
+<tr>
+<td>45</td>
+<td>🧑‍💻</td>
+<td>AI Assets (orig #5)</td>
+<td>Will Your Next Pair Programming Partner Be Human? An Empirical Evaluation of Generative AI as a Collaborative Teammate in a Semester-Long Classroom Setting</td>
+<td><a href="https://arxiv.org/pdf/2505.08119">pdf</a> · <a href="https://arxiv.org/abs/2505.08119">abs</a> (2025-05)</td>
+<td>✅ <a href="https://www.youtube.com/watch?v=EWvNQjAaOHw">How I use LLMs — Andrej Karpathy</a></td>
+</tr>
+<tr>
+<td>46</td>
+<td>🆚</td>
+<td>Traditional vs. AI (orig #29)</td>
+<td>From Developer Pairs to AI Copilots: A Comparative Study on Knowledge Transfer</td>
+<td><a href="https://arxiv.org/pdf/2506.04785">pdf</a> · <a href="https://arxiv.org/abs/2506.04785">abs</a> (2025-06)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Traditional+vs.+AI+talk">search: Traditional vs. AI talk</a></td>
+</tr>
+<tr>
+<td>47</td>
+<td>🔗</td>
+<td>Code Integration (orig #49)</td>
+<td>GitHub Copilot and Developer Productivity: An Observational Dose-Response Analysis</td>
+<td><a href="https://arxiv.org/pdf/2606.00438">pdf</a> · <a href="https://arxiv.org/abs/2606.00438">abs</a> (2026-05)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Code+Integration+talk">search: Code Integration talk</a></td>
+</tr>
+<tr>
+<td>48</td>
+<td>🧠</td>
+<td>Steel Man (orig #31)</td>
+<td>Can LLMs Judge Debates? Evaluating Non-Linear Reasoning via Argumentation Theory Semantics</td>
+<td><a href="https://arxiv.org/pdf/2509.15739">pdf</a> · <a href="https://arxiv.org/abs/2509.15739">abs</a> (2025-09)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Steel+Man+talk">search: Steel Man talk</a></td>
+</tr>
+<tr>
+<td>49</td>
+<td>🎤</td>
+<td>Engagement (orig #30)</td>
+<td>GestureCoach: Rehearsing for Engaging Talks with LLM-Driven Gesture Recommendations</td>
+<td><a href="https://arxiv.org/pdf/2504.10706">pdf</a> · <a href="https://arxiv.org/abs/2504.10706">abs</a> (2025-04)</td>
+<td>🔎 <a href="https://www.youtube.com/results?search_query=Engagement+talk">search: Engagement talk</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-3-glossary">Part 3 — Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Emoji</th>
+<th>Plain definition</th>
+<th>Recipe tickler (tiny prompt → output file)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Asset</td>
+<td>💎</td>
+<td>Any reusable artifact produced with AI, such as a prompt, spec, app, dataset, or memory file.</td>
+<td>"List my AI assets from this chat as a table → <code>assets.md</code>"</td>
+</tr>
+<tr>
+<td>AI Pair Programming</td>
+<td>👥</td>
+<td>A human sets intent and reviews while an AI drafts, explains, and refactors code.</td>
+<td>"Pair with me: build a one-file app from this spec → <code>app.html</code>"</td>
+</tr>
+<tr>
+<td>Agentic Workflow</td>
+<td>🤖</td>
+<td>A multi-step process in which an AI plans, uses tools, and checks its own work.</td>
+<td>"Plan the steps, run them, and log each result → <code>run_log.md</code>"</td>
+</tr>
+<tr>
+<td>Hive Mind (Distributed)</td>
+<td>🐝</td>
+<td>Many specialized agents that share memory and coordinate toward one goal.</td>
+<td>"Design 5 agent roles plus a shared memory schema → <code>hive.json</code>"</td>
+</tr>
+<tr>
+<td>Progressive Intelligence</td>
+<td>📈</td>
+<td>Capability that improves with every run because outputs feed back in as assets.</td>
+<td>"Compare v1 and v2 outputs and list the gains → <code>delta.md</code>"</td>
+</tr>
+<tr>
+<td>Longitudinal Intelligence</td>
+<td>🕰️</td>
+<td>Insight drawn from data and memory tracked over time.</td>
+<td>"Build a timeline of events from these notes → <code>timeline.csv</code>"</td>
+</tr>
+<tr>
+<td>AIOps</td>
+<td>📡</td>
+<td>Using AI and telemetry to run, monitor, and repair IT and AI systems.</td>
+<td>"Summarize these logs into incidents → <code>incidents.md</code>"</td>
+</tr>
+<tr>
+<td>Telemetry</td>
+<td>📶</td>
+<td>Logs, metrics, and traces emitted by running systems.</td>
+<td>"Turn this log into a metrics chart → <code>metrics.html</code>"</td>
+</tr>
+<tr>
+<td>Semantic Memory</td>
+<td>📚</td>
+<td>Stored facts and concepts that are true regardless of when they were learned.</td>
+<td>"Extract the facts as key–value pairs → <code>facts.json</code>"</td>
+</tr>
+<tr>
+<td>Episodic Memory</td>
+<td>🎞️</td>
+<td>Stored events and sessions: what happened, when, and with whom.</td>
+<td>"Log this session as dated episodes → <code>episodes.md</code>"</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>🔎</td>
+<td>Retrieval-augmented generation: fetch relevant chunks first, then answer.</td>
+<td>"Chunk this document and cite chunks in answers → <code>rag.py</code>"</td>
+</tr>
+<tr>
+<td>Chroma</td>
+<td>🟣</td>
+<td>An open-source embedding database often used for RAG.</td>
+<td>"Write a Chroma ingest-and-query script → <code>chroma_rag.py</code>"</td>
+</tr>
+<tr>
+<td>Embedding</td>
+<td>🧭</td>
+<td>A numeric vector that represents meaning, so similar text sits close together.</td>
+<td>"Embed these lines and plot them in 2D → <code>embed.html</code>"</td>
+</tr>
+<tr>
+<td>Context Window</td>
+<td>🪟</td>
+<td>The amount of text a model can consider at once.</td>
+<td>"Crop this to under 500 words, keeping the key facts → <code>crop.md</code>"</td>
+</tr>
+<tr>
+<td>Distill / Merge / Crop</td>
+<td>✂️</td>
+<td>Minimize memory: keep the essence, join overlaps, and trim to fit.</td>
+<td>"Distill, merge, and crop these notes → <code>memory.md</code>"</td>
+</tr>
+<tr>
+<td>Markdown Spec</td>
+<td>📝</td>
+<td>A structured Markdown document that tells an AI exactly what to build.</td>
+<td>"Write a spec with headings, tables, and acceptance tests → <code>spec.md</code>"</td>
+</tr>
+<tr>
+<td>Prompt Pattern</td>
+<td>♻️</td>
+<td>A reusable prompt template with slots for role, inputs, and outputs.</td>
+<td>"Make a fill-in-the-blank prompt template → <code>prompt.md</code>"</td>
+</tr>
+<tr>
+<td>Constraint-Based Modeling</td>
+<td>📦</td>
+<td>Defining a solution by its limits and rules before its features.</td>
+<td>"List the hard and soft constraints as nested bullets → <code>constraints.md</code>"</td>
+</tr>
+<tr>
+<td>Nested Boundaries</td>
+<td>🪆</td>
+<td>Constraints layered from system level down to function level.</td>
+<td>"Draw the nested boundaries as SVG boxes → <code>bounds.svg</code>"</td>
+</tr>
+<tr>
+<td>First Principles</td>
+<td>⚛️</td>
+<td>Reasoning from basic truths instead of from analogy.</td>
+<td>"Reduce this process to its minimum steps → <code>steps.md</code>"</td>
+</tr>
+<tr>
+<td>Asymptotic Reduction</td>
+<td>📉</td>
+<td>Removing parts and steps until further removal would hurt quality.</td>
+<td>"Cut steps until the output breaks, then list them → <code>reduce.md</code>"</td>
+</tr>
+<tr>
+<td>Regions (code)</td>
+<td>🗺️</td>
+<td>Named, foldable blocks that organize a large single file.</td>
+<td>"Refactor into named regions with a table of contents → <code>app.py</code>"</td>
+</tr>
+<tr>
+<td>Streamlit</td>
+<td>🎈</td>
+<td>A Python library that turns scripts into web apps.</td>
+<td>"Make a Streamlit app with a sidebar and a chart → <code>app.py</code>"</td>
+</tr>
+<tr>
+<td>Single-File App</td>
+<td>📄</td>
+<td>An entire app (HTML, CSS, and JS) in one shareable file.</td>
+<td>"Build it as one self-contained HTML file → <code>index.html</code>"</td>
+</tr>
+<tr>
+<td>GitHub Pages</td>
+<td>🌍</td>
+<td>Free static hosting from a GitHub repository.</td>
+<td>"Write a Pages-ready index and README → <code>index.html</code>"</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>⚙️</td>
+<td>GitHub's built-in automation (CI/CD) triggered by repository events.</td>
+<td>"Write a Pages deploy workflow → <code>.github/workflows/static.yml</code>"</td>
+</tr>
+<tr>
+<td>VBF</td>
+<td>📏</td>
+<td>Vital Business Function: a business process so critical that its outcomes define the value and efficacy you measure.</td>
+<td>"Define the VBFs with metric, baseline, and target → <code>vbf.csv</code>"</td>
+</tr>
+<tr>
+<td>Value-Based Care</td>
+<td>💰</td>
+<td>A payment model that rewards health outcomes instead of service volume.</td>
+<td>"Map features to outcome metrics → <code>value_map.md</code>"</td>
+</tr>
+<tr>
+<td>CMS Age Groups</td>
+<td>👪</td>
+<td>The 12 CMS-HCC risk-adjustment age bands: 0–34, 35–44, 45–54, 55–59, 60–64, 65–69, 70–74, 75–79, 80–84, 85–89, 90–94, 95+ (each split by female/male into 24 age-sex cells).</td>
+<td>"Make an age-group table with order, label, and emoji → <code>age_groups.csv</code>"</td>
+</tr>
+<tr>
+<td>Model Drift</td>
+<td>📉</td>
+<td>A change in model behavior or accuracy over time or across versions.</td>
+<td>"Rerun the golden set and diff the results → <code>drift.md</code>"</td>
+</tr>
+<tr>
+<td>Model Qualification</td>
+<td>✅</td>
+<td>Testing a model against your own tasks before trusting it.</td>
+<td>"Score 3 models on these 10 prompts → <code>scores.csv</code>"</td>
+</tr>
+<tr>
+<td>SWOT</td>
+<td>🧭</td>
+<td>Strengths, weaknesses, opportunities, and threats.</td>
+<td>"Make a SWOT for Web, Python, and Azure → <code>swot.md</code>"</td>
+</tr>
+<tr>
+<td>Steel Man / Straw Man</td>
+<td>🛡️</td>
+<td>Arguing the strongest (steel) versus the weakest (straw) version of a view.</td>
+<td>"Steel-man and straw-man this decision → <code>debate.md</code>"</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>🔌</td>
+<td>Model Context Protocol: an open standard for connecting AI apps to tools and data.</td>
+<td>"Describe an MCP tool schema for this API → <code>tool.json</code>"</td>
+</tr>
+<tr>
+<td>A2A</td>
+<td>🤝</td>
+<td>Agent2Agent: an open protocol for agents to discover and talk to each other.</td>
+<td>"Write an agent card for this agent → <code>agent.json</code>"</td>
+</tr>
+<tr>
+<td>WebRTC</td>
+<td>📡</td>
+<td>A browser standard for real-time peer-to-peer audio, video, and data.</td>
+<td>"Build a two-person video call page → <code>call.html</code>"</td>
+</tr>
+<tr>
+<td>PeerJS</td>
+<td>🧷</td>
+<td>A JavaScript library that simplifies WebRTC peer connections.</td>
+<td>"Use PeerJS for multiuser chat → <code>peer.html</code>"</td>
+</tr>
+<tr>
+<td>STT / TTS</td>
+<td>🎙️</td>
+<td>Speech-to-text and text-to-speech.</td>
+<td>"Transcribe the mic and read replies aloud → <code>voice.html</code>"</td>
+</tr>
+<tr>
+<td>MediaPipe</td>
+<td>🖐️</td>
+<td>Google's library for on-device face, hand, and pose tracking.</td>
+<td>"Track hands and draw landmarks → <code>hands.html</code>"</td>
+</tr>
+<tr>
+<td>TF.js</td>
+<td>🧠</td>
+<td>TensorFlow.js: machine learning in JavaScript, running in the browser.</td>
+<td>"Run a TF.js model on webcam frames → <code>tfjs.html</code>"</td>
+</tr>
+<tr>
+<td>FDE</td>
+<td>🛠️</td>
+<td>Forward deployed engineer: an engineer embedded with customers to deliver working solutions.</td>
+<td>"Write a first-week FDE engagement plan → <code>fde_plan.md</code>"</td>
+</tr>
+<tr>
+<td>FHIR</td>
+<td>🏥</td>
+<td>HL7's modern standard for exchanging healthcare data as resources over REST APIs.</td>
+<td>"Make a sample FHIR Patient resource → <code>patient.json</code>"</td>
+</tr>
+<tr>
+<td>Software Factory</td>
+<td>🏭</td>
+<td>An automated pipeline in which agents generate, test, and ship software.</td>
+<td>"Diagram the factory stages → <code>factory.svg</code>"</td>
+</tr>
+<tr>
+<td>Daredevil It</td>
+<td>😈</td>
+<td>Your pattern: reach a runnable result in under five minutes.</td>
+<td>"Give me a runnable graph from this data now → <code>graph.html</code>"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="favorite-top-10-file-types-structured-vs-unstructured">📁 Favorite Top-10 File Types: Structured vs. Unstructured</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Type</th>
+<th>Emoji</th>
+<th>Structure</th>
+<th>Why it matters</th>
+<th>Preamble prompt pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>.md</code></td>
+<td>📝</td>
+<td>Semi-structured</td>
+<td>Specs, memory, and slides; humans and AIs both read it well.</td>
+<td>"Output only Markdown with H2 sections, a table, and a checklist."</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>.html</code></td>
+<td>🌐</td>
+<td>Semi-structured (markup)</td>
+<td>A single-file app that runs in any browser.</td>
+<td>"Output one self-contained HTML file with inline CSS and JS and no build step."</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>.py</code></td>
+<td>🐍</td>
+<td>Structured (code)</td>
+<td>Data, ML, Streamlit, and automation.</td>
+<td>"Output one runnable Python file with named regions and a <code>main()</code>."</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>.json</code></td>
+<td>🧾</td>
+<td>Structured</td>
+<td>Configs, tool schemas, and agent cards.</td>
+<td>"Output valid JSON only, matching this schema: …"</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>.csv</code></td>
+<td>📊</td>
+<td>Structured (tabular)</td>
+<td>Datasets, metrics, and age-group tables.</td>
+<td>"Output CSV with a header row; columns: …"</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>.yaml</code></td>
+<td>⚙️</td>
+<td>Structured</td>
+<td>Workflows (GitHub Actions) and deployment configs.</td>
+<td>"Output a valid YAML GitHub Actions workflow that does …"</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>.js</code></td>
+<td>🟨</td>
+<td>Structured (code)</td>
+<td>Browser logic, modules, and Node scripts.</td>
+<td>"Output an ES module exporting …, with no dependencies."</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>.svg</code></td>
+<td>🖼️</td>
+<td>Structured (vector markup)</td>
+<td>Diagrams and icons that scale and can be edited as text.</td>
+<td>"Output an SVG diagram, 1200×675, with labeled boxes and arrows."</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>.png</code></td>
+<td>🏞️</td>
+<td>Unstructured (raster image)</td>
+<td>Slide images and screenshots.</td>
+<td>"Create a 16:9 PNG slide image showing … with no small text."</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>.mp4</code></td>
+<td>🎬</td>
+<td>Unstructured (video)</td>
+<td>Demos and talk clips.</td>
+<td>"Script a 60-second video: shot list, narration, and captions."</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> use structured files (<code>.json</code>, <code>.csv</code>, <code>.yaml</code>, <code>.py</code>, <code>.js</code>, <code>.svg</code>) when a program consumes the output; use semi-structured files (<code>.md</code>, <code>.html</code>) when both people and AIs consume it; use unstructured files (<code>.png</code>, <code>.mp4</code>) when the audience is human. The general preamble is: <strong>Role → Inputs → Constraints → Output file type and name → Acceptance check.</strong></p>
+<hr />
+<h2 id="part-4-first-principles-word-sets">Part 4 — First-Principles Word Sets</h2>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Word set</th>
+<th>Tiny copy-paste prompt</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Spec</strong></td>
+<td>"Write a Markdown spec for: ___"</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Graph</strong></td>
+<td>"Graph this data as an interactive chart: ___"</td>
+<td><code>.html</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Distill</strong></td>
+<td>"Distill this into 5 bullets: ___"</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Schema</strong></td>
+<td>"Infer a JSON Schema from: ___"</td>
+<td><code>.json</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Timeline</strong></td>
+<td>"Make a dated timeline from: ___"</td>
+<td><code>.csv</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Spec → App</strong></td>
+<td>"Turn this spec into one HTML file: ___"</td>
+<td><code>.html</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Data Dashboard</strong></td>
+<td>"Build a Streamlit dashboard for this CSV: ___"</td>
+<td><code>.py</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Memory Merge</strong></td>
+<td>"Merge these notes, removing duplicates: ___"</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Agent Roles</strong></td>
+<td>"Define 5 agent roles with inputs and outputs for: ___"</td>
+<td><code>.json</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Deploy Workflow</strong></td>
+<td>"Write a GitHub Pages Actions workflow."</td>
+<td><code>.yaml</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Voice UI</strong></td>
+<td>"Add speech-to-text and text-to-speech to this page: ___"</td>
+<td><code>.html</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Steel Man</strong></td>
+<td>"Steel-man the opposing view on: ___"</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Video → Spec → App</strong></td>
+<td>"From this transcript, write a spec, then a one-file app: ___"</td>
+<td><code>.md</code> + <code>.html</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Distill Merge Crop</strong></td>
+<td>"Distill, merge, then crop to 200 words: ___"</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Hive Mind Memory</strong></td>
+<td>"Design a shared memory for 5 agents, with read and write rules."</td>
+<td><code>.json</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Age Group Emojis</strong></td>
+<td>"Make a CMS age-group table: order, group, emoji (use the 12 CMS-HCC bands 0–34 … 95+)."</td>
+<td><code>.csv</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Model Drift Check</strong></td>
+<td>"Compare these two model outputs and flag drift: ___"</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Real-Time Sensing</strong></td>
+<td>"Build a MediaPipe hand-tracking page with webcam input."</td>
+<td><code>.html</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Platform SWOT Grid</strong></td>
+<td>"Make a SWOT grid for Web, Python, and Azure."</td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Slide Per Topic</strong></td>
+<td>"Make one 3-row emoji table per topic, plus a media filename."</td>
+<td><code>.md</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai-protocols-standards">🔌 AI Protocols &amp; Standards</h3>
+<p>Only well-documented, factual support is listed. Verify versions before quoting on a slide, because support changes quickly.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol / Standard</th>
+<th>Emoji</th>
+<th>What it is</th>
+<th>Steward</th>
+<th>Examples of support (apps / models / platforms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP (Model Context Protocol)</td>
+<td>🔌</td>
+<td>An open protocol that connects AI apps to tools, resources, and prompts.</td>
+<td>Introduced by Anthropic (Nov 2024); now an open project</td>
+<td>Claude apps and Claude Code; OpenAI Agents SDK; GitHub Copilot agent mode in VS Code; Gemini CLI; Microsoft Copilot Studio</td>
+</tr>
+<tr>
+<td>A2A (Agent2Agent)</td>
+<td>🤝</td>
+<td>An open protocol for agent discovery (agent cards) and agent-to-agent tasks.</td>
+<td>Announced by Google (Apr 2025); contributed to the Linux Foundation (Jun 2025)</td>
+<td>Google Agent Development Kit (ADK); support announced by Microsoft (Azure AI Foundry, Copilot Studio)</td>
+</tr>
+<tr>
+<td>OpenAPI</td>
+<td>📜</td>
+<td>A machine-readable description of REST APIs.</td>
+<td>OpenAPI Initiative (Linux Foundation)</td>
+<td>ChatGPT GPT Actions; Azure API Management; FastAPI auto-generates OpenAPI</td>
+</tr>
+<tr>
+<td>JSON Schema</td>
+<td>🧾</td>
+<td>A vocabulary for validating the structure of JSON.</td>
+<td>JSON Schema organization</td>
+<td>Tool and function calling in the OpenAI, Anthropic, and Gemini APIs; MCP tool <code>inputSchema</code>; OpenAI Structured Outputs</td>
+</tr>
+<tr>
+<td>WebRTC</td>
+<td>📡</td>
+<td>Real-time peer-to-peer audio, video, and data in browsers.</td>
+<td>W3C and IETF</td>
+<td>Chrome, Edge, Firefox, Safari; PeerJS; OpenAI Realtime API (WebRTC connection option)</td>
+</tr>
+<tr>
+<td>Web Speech API</td>
+<td>🎙️</td>
+<td>Browser speech recognition and speech synthesis.</td>
+<td>W3C Community Group draft</td>
+<td>Speech synthesis in all major browsers; recognition in Chromium-based browsers and Safari, with limited support in Firefox</td>
+</tr>
+<tr>
+<td>WebGPU</td>
+<td>🎮</td>
+<td>Modern GPU graphics and compute from the browser.</td>
+<td>W3C (GPU for the Web WG)</td>
+<td>Chrome and Edge (since v113), with Safari and Firefox support rolling out; three.js WebGPURenderer; TF.js WebGPU backend</td>
+</tr>
+<tr>
+<td>OAuth 2.0 / OpenID Connect + MFA</td>
+<td>🔐</td>
+<td>Delegated authorization (OAuth) plus identity (OIDC); MFA adds a second factor.</td>
+<td>IETF (OAuth); OpenID Foundation (OIDC)</td>
+<td>Microsoft Entra ID; GitHub (2FA required for code contributors); the MCP authorization spec builds on OAuth 2.1</td>
+</tr>
+<tr>
+<td>OpenTelemetry</td>
+<td>📶</td>
+<td>A vendor-neutral standard and SDKs for traces, metrics, and logs.</td>
+<td>CNCF</td>
+<td>Azure Monitor / Application Insights; GenAI semantic conventions for LLM spans</td>
+</tr>
+<tr>
+<td>HL7 FHIR</td>
+<td>🏥</td>
+<td>A healthcare data exchange standard built on REST resources (Patient, Observation, and so on).</td>
+<td>HL7 International</td>
+<td>Azure Health Data Services (FHIR service); Google Cloud Healthcare API; Epic and Oracle Health FHIR APIs</td>
+</tr>
+<tr>
+<td>SMART on FHIR</td>
+<td>🩺</td>
+<td>OAuth-based launch and authorization for apps running on top of FHIR EHRs.</td>
+<td>HL7 and SMART Health IT</td>
+<td>EHR app launch at many U.S. health systems (Epic, Oracle Health)</td>
+</tr>
+<tr>
+<td>HL7 v2</td>
+<td>📨</td>
+<td>A pipe-delimited clinical messaging standard that is still widely used inside hospitals.</td>
+<td>HL7 International</td>
+<td>Interface engines; Azure and Google healthcare APIs support ingestion and conversion</td>
+</tr>
+<tr>
+<td>Markdown / CommonMark</td>
+<td>📝</td>
+<td>A plain-text formatting syntax, with CommonMark as its standard specification.</td>
+<td>CommonMark community</td>
+<td>GitHub; virtually every LLM chat UI renders Markdown</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-5-links-resources">Part 5 — Links &amp; Resources</h2>
+<h3 id="repository-aaroncwackerai-ui-ux-js">🐙 Repository: <a href="https://github.com/AaronCWacker/AI-UI-UX-JS">AaronCWacker/AI-UI-UX-JS</a></h3>
+<ul>
+<li>Description (from GitHub): <em>"🏭 All.AI (Over 600 Apps Strong) AI-UI-UX-JS Apps w/ ThreeJS – AI Pair Programming and Co-Evolution of AI in JS, py, svg, html, glb, mp3, mp4."</em></li>
+<li>As of 2026-10-17, the GitHub tree API lists <strong>821 files</strong>, including <strong>721 HTML</strong>, <strong>44 Markdown</strong>, and <strong>9 Python</strong> files.</li>
+<li><strong>GitHub Pages:</strong> <code>https://aaroncwacker.github.io/AI-UI-UX-JS/</code> returns a 301 redirect to the custom domain <strong>https://allaiinc.org/</strong>, so each repository file is served at <code>https://allaiinc.org/&lt;filename&gt;</code>. Every live link below returned HTTP 200.</li>
+</ul>
+<h4 id="healthcare-related-apps-matched-by-filename">🏥 Healthcare-Related Apps (matched by filename)</h4>
+<table>
+<thead>
+<tr>
+<th>Emoji</th>
+<th>App</th>
+<th>Source</th>
+<th>Live (Pages)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td>Healthcare AI dashboard</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/healthcare-dashboard.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/healthcare-dashboard.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🏨</td>
+<td>Care Constellation: hospital director view</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Care-Constellation-Hospital.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Care-Constellation-Hospital.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>✨</td>
+<td>Care Constellation</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Care-Constellation.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Care-Constellation.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🧑‍⚕️</td>
+<td>Care Holodeck</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Care-Holodeck.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Care-Holodeck.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🗺️</td>
+<td>Care Quest: Minnesota regional</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Care-Quest-MN-Regional.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Care-Quest-MN-Regional.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🚑</td>
+<td>Care Quest: rapid response</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Care-Quest-Rapid-Response.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Care-Quest-Rapid-Response.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🏥</td>
+<td>Careworks Hospital</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Careworks-Hospital.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Careworks-Hospital.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🧬</td>
+<td>Clinical Body Lab</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Clinical-Body-Lab.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Clinical-Body-Lab.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🎗️</td>
+<td>Cancer Atlas v5: treatment journeys (longitudinal)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Cancer-Atlas-v5--Treatment-Journeys.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Cancer-Atlas-v5--Treatment-Journeys.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🫀</td>
+<td>Cardio Atlas v4</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Cardio%F0%9F%AB%80Atlas-v4-Inner-Space-Expedition.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Cardio%F0%9F%AB%80Atlas-v4-Inner-Space-Expedition.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>❤️</td>
+<td>Gamify Heart Health (Claude version)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Gamify-Heart-Health-Claude.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Gamify-Heart-Health-Claude.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>❤️</td>
+<td>Gamify Heart Health (Gemini version)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Gamify-Heart-Health-Gemini.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Gamify-Heart-Health-Gemini.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>❤️</td>
+<td>Gamify Heart Health (Meta version)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Gamify-Heart-Health-Meta.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Gamify-Heart-Health-Meta.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🐝</td>
+<td>Hive Mind Medverse (three.js)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Hive-Mind-Medverse-Threejs.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Hive-Mind-Medverse-Threejs.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>👨‍⚕️</td>
+<td>HoloDoctor</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/HoloDoctor.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/HoloDoctor.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🩺</td>
+<td>HoloDoctor v5: heart and cancer body atlas</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/HoloDoctor-Nerbert-Albert-Sherbert-v5-HeartCancerBodyAtlas.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/HoloDoctor-Nerbert-Albert-Sherbert-v5-HeartCancerBodyAtlas.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🦴</td>
+<td>Anatomy model</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/AnatomyModel.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/AnatomyModel.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>📍</td>
+<td>Geospatial health networks (hospital access, MN/TX/FL/NM)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Maps-6-Geospatial-Health-Nets.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Maps-6-Geospatial-Health-Nets.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🖐️</td>
+<td>Human body 3D tracking (MediaPipe + three.js)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Human-Body-3D-Tracking-Mediapipe-ThreeJS.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Human-Body-3D-Tracking-Mediapipe-ThreeJS.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🛡️</td>
+<td>Steel Man / Straw Man for health (Markdown)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/SteelMan-StrawMan-Health.md">GitHub</a></td>
+<td><a href="https://allaiinc.org/SteelMan-StrawMan-Health.md">allaiinc.org</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="talk-relevant-apps-agents-memory-protocols-voice-specs">🧩 Talk-Relevant Apps (agents, memory, protocols, voice, specs)</h4>
+<table>
+<thead>
+<tr>
+<th>Emoji</th>
+<th>App</th>
+<th>Source</th>
+<th>Live (Pages)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧠</td>
+<td>Agent memory design (topics 6, 34)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Agents-Memory-Design.md">GitHub</a></td>
+<td><a href="https://allaiinc.org/Agents-Memory-Design.md">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🐝</td>
+<td>Hive Holodeck (topics 15, 35)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Hive%20Holodeck.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Hive%20Holodeck.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🕸️</td>
+<td>Multi-agent atlas (topic 35)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Multiagent%20Atlas.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Multiagent%20Atlas.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🎛️</td>
+<td>Agentic command and control (topic 47)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/AI-Agentic-Command-and-Control.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/AI-Agentic-Command-and-Control.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🔌</td>
+<td>AI protocols and standards (topic 39)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/AI-Protocols-and-Standards.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/AI-Protocols-and-Standards.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🎙️</td>
+<td>MCP voice-first agent hub (topics 39, 43)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/MCP-Voice-First-AI-Agent-Hub-w-Kimi.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/MCP-Voice-First-AI-Agent-Hub-w-Kimi.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🔌</td>
+<td>Voice Pilot 7 with MCP (topic 39)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Voice-Pilot-7-MCP.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Voice-Pilot-7-MCP.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🧵</td>
+<td>Voice Pilots 12: Memory Loom (topic 6)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Voice-Pilots-12-Memory-Loom.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Voice-Pilots-12-Memory-Loom.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>⚛️</td>
+<td>First Principles v2 (topic 21)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/FIRST-PRINCIPLES-v2.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/FIRST-PRINCIPLES-v2.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>📝</td>
+<td>Spec-to-apps with evaluation (topics 18, 41)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Agentive_AI_Spec-to-Apps-w-Eval.md">GitHub</a></td>
+<td><a href="https://allaiinc.org/Agentive_AI_Spec-to-Apps-w-Eval.md">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>♻️</td>
+<td>Aaron's prompt examples (topic 24)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/ACW_Prompt_Examples.md">GitHub</a></td>
+<td><a href="https://allaiinc.org/ACW_Prompt_Examples.md">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>📡</td>
+<td>Agentic ITSM (topic 27)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Agentic-ITSM.md">GitHub</a></td>
+<td><a href="https://allaiinc.org/Agentic-ITSM.md">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🔎</td>
+<td>Attribution and source GraphRAG (topic 6)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Attribution_Source_GraphRAG.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Attribution_Source_GraphRAG.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>📷</td>
+<td>MediaPipe capture (topic 43)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/Mediapipe-Capture.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/Mediapipe-Capture.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🗒️</td>
+<td>AI voice note taker (topic 43)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/AIVoiceNoteTaker.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/AIVoiceNoteTaker.html">allaiinc.org</a></td>
+</tr>
+<tr>
+<td>🗣️</td>
+<td>Speech recognition voice app (topic 43)</td>
+<td><a href="https://github.com/AaronCWacker/AI-UI-UX-JS/blob/main/AI_Speech_Recognition_Voice_Grok.html">GitHub</a></td>
+<td><a href="https://allaiinc.org/AI_Speech_Recognition_Voice_Grok.html">allaiinc.org</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="allaiincorg-what-is-there">🌐 allaiinc.org — What Is There</h3>
+<ul>
+<li><strong>🏭 All AI app launcher</strong> for the AI-UI-UX-JS repository. It lists files through the GitHub contents API and offers List, 🕸️ Graph, 🗂️ Treemap, and 🕐 Timeline views; ▶️ Play and 💻 Code modes; and built-in <strong>⏱ 1m / 2m / 5m timers</strong> (useful for the one-minute-per-slide pacing).</li>
+<li><strong>Bookmark bar (real links found on the page):</strong></li>
+<li>🧩 <em>My AI:</em> <a href="https://github.com/AaronCWacker/AI-UI-UX-JS/new/main">New file in repo</a> · <a href="https://allaiinc.org/">AllAIInc.Org</a> · <a href="https://huggingface.co/awacke1">Hugging Face awacke1</a></li>
+<li>🚀 <em>Frontier:</em> <a href="https://claude.ai/new">Claude</a> · <a href="https://chatgpt.com/">ChatGPT</a> · <a href="https://grok.com/">Grok</a> · <a href="https://gemini.google.com/">Gemini</a></li>
+<li>🎬 <em>Media:</em> <a href="https://www.youtube.com/">YouTube</a> · <a href="https://www.krea.ai/">Krea</a> · <a href="https://magnific.ai/">Magnific</a> · <a href="https://app.runwayml.com/">Runway</a> · <a href="https://suno.com/">Suno</a> · <a href="https://dream-machine.lumalabs.ai/">Luma Dream Machine</a> · <a href="https://app.leonardo.ai/">Leonardo</a> · <a href="https://hailuoai.video/">Hailuo</a> · <a href="https://kling.ai/">Kling</a></li>
+<li>Other groups (People, Store, Playlists, Games) link to personal accounts and stores (Gmail, Outlook, X Pro, GitHub repos, Steam, and others).</li>
+</ul>
+<h3 id="chatgpt-grok-claude-and-gemini-share-links-placeholder">💬 ChatGPT, Grok, Claude, and Gemini Share Links (Placeholder)</h3>
+<blockquote>
+<p>⚠️ Your ChatGPT history is not accessible from here. Paste the share links you want to cite below.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Topic #</th>
+<th>Emoji</th>
+<th>Conversation title</th>
+<th>Share link</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://chatgpt.com/share/…</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://chatgpt.com/share/…</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://chatgpt.com/share/…</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://chatgpt.com/share/…</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://chatgpt.com/share/…</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-6-next-steps-single-super-html-demo-app">Part 6 — Next Steps: Single Super HTML Demo App</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Emoji</th>
+<th>Action</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Freeze the outline</td>
+<td>🧊</td>
+<td>Finalize the order and merges in Part 1 (15/35, 2/36, 5/29/49).</td>
+<td><code>hive-mind-memory-map.md</code> v2</td>
+</tr>
+<tr>
+<td>2. Spec it</td>
+<td>📝</td>
+<td>Write one Markdown spec: sections = the 10 regions, each slide = a 3-row table plus media.</td>
+<td><code>super-demo-spec.md</code></td>
+</tr>
+<tr>
+<td>3. Slide engine</td>
+<td>🎞️</td>
+<td>One HTML file reads the Markdown, renders one slide per topic, and has a 1-minute timer and keyboard navigation.</td>
+<td><code>super-demo.html</code></td>
+</tr>
+<tr>
+<td>4. Memory panel</td>
+<td>🧠</td>
+<td>Store notes per slide in localStorage, with export and import as <code>.md</code> and <code>.json</code> (episodic plus semantic).</td>
+<td>Memory export</td>
+</tr>
+<tr>
+<td>5. Live IO</td>
+<td>🎙️</td>
+<td>Add Web Speech STT/TTS, WebRTC/PeerJS multiuser mode, and MediaPipe hand gestures for next/previous.</td>
+<td>Voice and gesture control</td>
+</tr>
+<tr>
+<td>6. Healthcare demo</td>
+<td>🏥</td>
+<td>Embed or link the allaiinc.org healthcare apps and a CMS age-group emoji chart (from a CSV spec).</td>
+<td>Demo region</td>
+</tr>
+<tr>
+<td>7. References</td>
+<td>📚</td>
+<td>Render the Part 2 table with clickable arXiv and YouTube links.</td>
+<td>Reference region</td>
+</tr>
+<tr>
+<td>8. Media</td>
+<td>🎬</td>
+<td>Produce <code>media/slideNN.png</code> and <code>slideNN.mp4</code> placeholders, then replace them with real captures.</td>
+<td><code>media/</code> folder</td>
+</tr>
+<tr>
+<td>9. Ship</td>
+<td>🚀</td>
+<td>Commit to AI-UI-UX-JS so GitHub Pages serves it at allaiinc.org.</td>
+<td>Public URL</td>
+</tr>
+<tr>
+<td>10. Measure</td>
+<td>📏</td>
+<td>Add simple telemetry (slide time and clicks) to your VBF table for the next revision.</td>
+<td><code>telemetry.csv</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>End of memory map. Revise, then lift each topic into slides.</em> 🐝</p></main><script>
+const q=document.getElementById('q');q.addEventListener('input',()=>{const t=q.value.toLowerCase();document.querySelectorAll('main tr, main li').forEach(e=>{if(e.closest('thead'))return;e.classList.toggle('hide',t&&!e.textContent.toLowerCase().includes(t))})});
+document.getElementById('top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script></body></html>
