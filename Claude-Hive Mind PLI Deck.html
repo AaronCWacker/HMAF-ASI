@@ -1,0 +1,449 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hive Mind PLI Deck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one-screen presenter. Top rail (act · slide · 60s timer) → stage (slide) → bottom rail (nav).
+   Overview = 7×7 honeycomb of loci rooms. Honey = hive accent; teal = clinical secondary. */
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#132030; --muted:#56657A; --line:#D5DCE6;
+  --honey:#A86C00; --honey-soft:#F7E8C6; --teal:#0C7471; --teal-soft:#D5EFEE; --warn:#B4361F;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C131B; --surface:#141F2A; --ink:#E7EDF4; --muted:#91A0B2; --line:#243241;
+  --honey:#F2B33D; --honey-soft:#3A2B0E; --teal:#45C4BC; --teal-soft:#0F2E2E; --warn:#FF7A5C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C131B; --surface:#141F2A; --ink:#E7EDF4; --muted:#91A0B2; --line:#243241;
+  --honey:#F2B33D; --honey-soft:#3A2B0E; --teal:#45C4BC; --teal-soft:#0F2E2E; --warn:#FF7A5C; color-scheme:dark}
+
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;
+  display:flex;flex-direction:column;overflow:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--teal)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--honey);outline-offset:2px}
+
+/* rails */
+.rail{display:flex;align-items:center;gap:12px;padding-block:10px;flex-wrap:wrap}
+.rail.top{border-bottom:1px solid var(--line)}
+.rail.bottom{border-top:1px solid var(--line);justify-content:space-between}
+.brand{font-family:var(--f-display);font-weight:800;letter-spacing:.01em;font-size:15px;display:flex;align-items:center;gap:8px;min-width:0}
+.brand .hexdot{width:14px;height:16px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);flex:none}
+.actlabel{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.count{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted)}
+.timer{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px 3px 4px;cursor:pointer}
+.timer svg{width:26px;height:26px;transform:rotate(-90deg)}
+.timer .trk{fill:none;stroke:var(--line);stroke-width:4}
+.timer .arc{fill:none;stroke:var(--honey);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .9s linear}
+.timer.over .arc{stroke:var(--warn)}
+.timer .t{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:13px;min-width:3.2ch}
+.timer.over .t{color:var(--warn)}
+.progress{height:3px;background:var(--line);position:relative}
+.progress i{position:absolute;inset:0 auto 0 0;background:var(--honey);transition:width .25s}
+
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:14px}
+.btn:hover{border-color:var(--honey)}
+.btn.primary{background:var(--honey);border-color:var(--honey);color:var(--bg);font-weight:700}
+.btn[aria-pressed="true"]{background:var(--honey-soft);border-color:var(--honey)}
+.navgroup{display:flex;gap:8px;flex-wrap:wrap}
+.hint{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+@media (max-width:640px){.hint{display:none}.actlabel{display:none}}
+
+/* stage */
+main{flex:1;min-height:0;overflow:auto;padding-block:20px}
+.frame{max-width:1180px;margin:0 auto;animation:in .28s ease-out both}
+@keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.frame{animation:none}.progress i,.timer .arc{transition:none}}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.eyebrow b{color:var(--honey);font-weight:600}
+h1,h2{font-family:var(--f-display);text-wrap:balance;margin:0}
+.slide h2{font-size:clamp(26px,3.6vw,44px);line-height:1.08;font-weight:700;margin-top:8px}
+.slide h2 .em{margin-right:.25em}
+.tag{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:var(--f-mono);font-size:13px;background:var(--honey-soft);color:var(--ink);border-radius:999px;padding:4px 12px}
+.tag span{color:var(--honey);font-weight:600}
+
+.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;margin-top:22px}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+/* three-point table */
+.pts{width:100%;border-collapse:collapse;font-size:clamp(15px,1.45vw,18px)}
+.pts th{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:600;padding:0 10px 8px;border-bottom:2px solid var(--ink)}
+.pts td{padding:14px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.pts td.n{font-family:var(--f-display);font-weight:800;font-size:22px;color:var(--honey);width:2.2ch;padding-left:0}
+.pts td.d{font-family:var(--f-mono);font-size:13px;color:var(--teal);white-space:nowrap}
+@media (max-width:520px){.pts td.d{white-space:normal}}
+
+/* media slot */
+.media{border:1.5px dashed var(--line);border-radius:12px;aspect-ratio:16/9;max-width:100%;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:
+  repeating-linear-gradient(60deg,transparent 0 22px,color-mix(in srgb,var(--line) 35%,transparent) 22px 23px)}
+.media.drag{border-color:var(--honey);background:var(--honey-soft)}
+.media img,.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--bg)}
+.media .ph{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px}
+.media .fn{font-family:var(--f-mono);font-size:13px}
+.media .sub{font-size:13px;color:var(--muted)}
+.media .clear{position:absolute;top:8px;right:8px;z-index:2;font-size:12px;padding:4px 8px}
+.media input{position:absolute;width:1px;height:1px;opacity:0}
+
+/* reference + prompt */
+.ref{border-left:3px solid var(--teal);padding:2px 0 2px 14px;display:flex;flex-direction:column;gap:4px}
+.ref .lbl,.prompt .lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ref .pt{font-weight:700;line-height:1.35}
+.ref .links{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+.prompt{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.prompt code{font-family:var(--f-mono);font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-break:break-word;user-select:all}
+.prompt .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+
+/* title & divider frames */
+.hero{display:flex;flex-direction:column;gap:18px;padding-block:4vh}
+.hero h1{font-size:clamp(34px,6vw,76px);line-height:1.02;font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--honey)}
+.hero .lede{font-size:clamp(17px,1.8vw,21px);max-width:62ch;color:var(--muted)}
+.byline{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.formula{display:flex;gap:10px;flex-wrap:wrap}
+.formula span{font-family:var(--f-mono);font-size:14px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--surface)}
+.formula span b{color:var(--honey)}
+
+.divider{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;padding-block:3vh}
+@media (max-width:700px){.divider{grid-template-columns:1fr}}
+.roman{font-family:var(--f-display);font-weight:800;font-size:clamp(80px,14vw,170px);line-height:.85;color:var(--honey)}
+.divider h2{font-size:clamp(30px,4.4vw,54px);line-height:1.05}
+.divider .why{color:var(--muted);font-size:18px;max-width:58ch;margin-top:10px}
+.rooms{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.rooms li{display:flex;gap:10px;align-items:baseline;padding:8px 10px;border-radius:8px;background:var(--surface);border:1px solid var(--line);cursor:pointer}
+.rooms li:hover{border-color:var(--honey)}
+.rooms .k{font-family:var(--f-mono);font-size:12px;color:var(--honey);min-width:2.4ch;font-variant-numeric:tabular-nums}
+
+/* overview honeycomb */
+#overview{position:fixed;inset:0;z-index:20;background:color-mix(in srgb,var(--bg) 96%,transparent);overflow:auto;
+  padding-top:calc(16px + env(safe-area-inset-top,0px));padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.ovhead{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1100px;margin:0 auto 14px;flex-wrap:wrap}
+.ovhead h2{font-size:24px}
+.comb{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:6px;overflow-x:auto;padding-bottom:8px}
+.combrow{display:flex;gap:6px;align-items:center}
+.combrow:nth-child(even){padding-left:52px}
+.rowlbl{width:96px;flex:none;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.2}
+.hex{width:104px;height:116px;flex:none;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--surface);border:0;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:14px 10px;text-align:center;position:relative}
+.hex::before{content:"";position:absolute;inset:0;clip-path:inherit;box-shadow:inset 0 0 0 2px var(--line);pointer-events:none}
+.hex .e{font-size:22px;line-height:1}
+.hex .no{font-family:var(--f-mono);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.hex .tt{font-size:10.5px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hex.seen{background:var(--teal-soft)}
+.hex.cur{background:var(--honey-soft)}
+.hex:hover{background:var(--honey-soft)}
+.legend{max-width:1100px;margin:12px auto 0;display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--line)}
+
+.toast{position:fixed;left:50%;bottom:calc(70px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:14px;z-index:30}
+.close-links{display:flex;gap:10px;flex-wrap:wrap}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:8px;max-width:760px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:2.2ch minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--f-display);font-weight:800;color:var(--honey);font-size:20px;line-height:1.2}
+</style>
+
+<header>
+  <div class="rail top">
+    <div class="brand"><span class="hexdot" aria-hidden="true"></span>Hive Mind PLI</div>
+    <div class="actlabel" id="actlabel"></div>
+    <span class="count" id="count"></span>
+    <button class="timer" id="timer" title="Pause or resume the one-minute timer (T)" aria-label="One-minute slide timer">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><circle class="trk" cx="15" cy="15" r="12"/><circle class="arc" id="arc" cx="15" cy="15" r="12" stroke-dasharray="75.4" stroke-dashoffset="0"/></svg>
+      <span class="t" id="tval">1:00</span>
+    </button>
+  </div>
+  <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+</header>
+
+<main id="main" tabindex="-1"><div id="stage"></div></main>
+
+<footer class="rail bottom">
+  <div class="navgroup">
+    <button class="btn" id="prev" aria-label="Previous slide">← Prev</button>
+    <button class="btn primary" id="next" aria-label="Next slide">Next →</button>
+  </div>
+  <span class="hint">← → move · O map · T timer · A auto · F fullscreen</span>
+  <div class="navgroup">
+    <button class="btn" id="auto" aria-pressed="false" title="Advance automatically when the minute ends (A)">⏭ Auto-advance</button>
+    <button class="btn" id="ovbtn" title="Show the 7×7 slide map (O)">⬢ Map</button>
+    <button class="btn" id="fs" title="Fullscreen (F)">⛶</button>
+  </div>
+</footer>
+
+<section id="overview" hidden aria-label="Slide map">
+  <div class="ovhead">
+    <h2>7 Acts × 7 Rooms</h2>
+    <button class="btn" id="ovclose">Close map</button>
+  </div>
+  <div class="comb" id="comb"></div>
+  <div class="legend"><span><i style="background:var(--honey-soft)"></i>Current</span><span><i style="background:var(--teal-soft)"></i>Visited</span><span><i style="background:var(--surface)"></i>Not yet</span></div>
+</section>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const ACTS=[
+ {r:"I",e:"💗",name:"The Why and the Value",why:"Start with the person in the care relationship, then prove value with numbers."},
+ {r:"II",e:"🤝",name:"AI Assets and AI Pair Programming",why:"What we build with, who drives, and which languages carry the work."},
+ {r:"III",e:"📝",name:"The Craft of Specification",why:"The spec is the new code: structure it, constrain it, and distill it."},
+ {r:"IV",e:"🧠",name:"Memory and Longitudinal Intelligence",why:"What the system remembers, how it learns over a timeline, and how we keep models honest."},
+ {r:"V",e:"🐝",name:"Hive Minds and AI Operations",why:"Many agents and people, one shared memory, observed and governed."},
+ {r:"VI",e:"🚀",name:"Delivery Patterns",why:"From regions in big Python systems to single-file apps published on push."},
+ {r:"VII",e:"🌐",name:"Frontier Systems, Protocols, and Infrastructure",why:"The standards, machines, and networks that make the hive run at scale."}
+];
+const V={
+ karpathy:["Karpathy: Software Is Changing (Again)","https://www.youtube.com/watch?v=LCEmiRjPEtQ"],
+ grove:["Sean Grove: The New Code","https://ai.engineer/talks/specifications-are-the-new-code"],
+ mcp:["Mahesh Murag: Building Agents with MCP","https://www.youtube.com/watch?v=kQmXtrmQ5Zg"],
+ barry:["Barry Zhang: How We Build Effective Agents","https://www.youtube.com/watch?v=D7_ipDqhtwk"],
+ skills:["Don't Build Agents, Build Skills Instead","https://www.youtube.com/watch?v=CEvIs9y1uog"],
+ ng25:["Andrew Ng: State of AI Agents (2025)","https://www.youtube.com/watch?v=4pYzYmSdSH4"],
+ ng24:["Andrew Ng: Agentic Workflows (2024)","https://www.youtube.com/watch?v=sal78ACtGTc"],
+ lex491:["Lex Fridman #491: OpenClaw","https://www.youtube.com/watch?v=YFjfBk8HI5o"],
+ lex490:["Lex Fridman #490: State of AI in 2026","https://lexfridman.com/ai-sota-2026/"]
+};
+const ax=id=>"https://arxiv.org/pdf/"+id;
+// [act, orig#, emoji, title, tag, media, [[point,distilled]x3], paperTitle, paperUrl, videoKey, prompt]
+const S=[
+[0,1,"💗","Share Your Why: Care and Compassion in an AI + Value-Based Care World","Care-First AI","s01-why.mp4",[["Every model output touches a real person's care relationship.","Person first"],["Value-based care pays for outcomes, so AI must improve outcomes, not activity.","Outcomes over output"],["Compassion is a design requirement: tone, clarity, and dignity are testable.","Compassion as spec"]],"Reinventing Clinical Dialogue: Agentic Paradigms for LLM Enabled Healthcare Communication",ax("2512.01453"),null,"In one paragraph, describe how this AI feature improves one patient's care relationship. Then list one compassion check I can test."],
+[0,4,"🏥","How We Get to Better Care and Better AI for Healthcare","Care ⇄ AI Loop","s02-better-care.png",[["Better data and documentation lead to better care decisions.","Data quality"],["Humans stay in the loop where liability and safety live.","Oversight"],["Feedback from care teams becomes the next model's training signal.","Closed loop"]],"The Doctor Will (Still) See You Now: On the Structural Limits of Agentic AI in Healthcare",ax("2602.18460"),null,"List 3 points in this care workflow where a human must stay in the loop, and explain why in one sentence each."],
+[0,3,"⚖️","Balancing Speed to Development and Speed to Value Simultaneously","Dual Velocity","s03-dual-speed.png",[["Fast prototypes prove feasibility; fast value proves worth.","Two clocks"],["Ship a runnable slice first, then measure one business metric.","Slice, then score"],["Perceived speed-up is not measured speed-up; time it.","Measure, don't feel"]],"Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",ax("2507.09089"),null,"Give me the smallest runnable slice of ___ and one business metric to time it against."],
+[0,14,"📈","Determining Value-Based Factors (VBFs) and Measuring Business Quality and Efficacy","Measured Value","s04-vbf.png",[["Define value-based factors before you build: Stars, HEDIS gaps, cost, time.","Metric first"],["Compare AI output quality against expert baselines.","Expert baseline"],["Efficacy = accuracy × adoption × time saved.","Efficacy formula"]],"GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks",ax("2510.04374"),null,"Define 3 value-based factors for ___ and how to measure each."],
+[0,20,"👶👵","Representing Age Groups with Ordered CMS Age Groups and Emojis","Ordered Age Bands","s05-age-bands.png",[["Use an ordered key (01, 02, 03…) so bands sort correctly everywhere.","Ordinal keys"],["Pair each CMS band with one representative emoji for instant recall.","Picture = 1k words"],["Audit model language for age stereotypes in every band.","Age-fair AI"]],"Examining Age-Bias and Stereotypes of Aging in LLMs (ACM ASSETS 2025, not on arXiv)","https://doi.org/10.1145/3663547.3746464",null,"Make an ordered CMS age-band table with a representative emoji per band."],
+[0,30,"🎤","Engagement Tips","One-Minute Hooks","s06-engage.mp4",[["Open each slide with a question or a live result.","Hook first"],["Show, then tell: a running demo beats a bullet.","Demo > deck"],["Give learners a copy-paste prompt to try immediately.","Take-home prompt"]],"Impact of LLM-Based AI Tools on Physician-Patient Communication: Systematic Review and Meta-Analysis (JMIR 2026)","https://www.jmir.org/2026/1/e77307","karpathy","Turn this slide into a one-minute hook: one question, one live result, and one take-home prompt."],
+[0,31,"🥊","Opportunity Judgment Trade-offs: SWOT, Steel Man, and Straw Man","Argue Both Sides","s07-swot.png",[["SWOT frames the opportunity; steel-manning tests it at full strength.","Strongest case"],["Straw men reveal weak assumptions you should not build on.","Weak-spot finder"],["Let two AI agents debate, and a third judge, before you commit.","Debate, then decide"]],"Can LLM Agents Really Debate? A Controlled Study of Multi-Agent Debate in Logical Reasoning",ax("2511.07784"),null,"Steel-man, then straw-man, then judge this idea in a 3-column table."],
+
+[1,5,"🧩","Defining AI Assets and AI Pair Programming","Reusable Intelligence","s08-assets.png",[["An AI asset is any reusable artifact: spec, prompt, dataset, app, media, memory.","Asset = reusable"],["Pair programming = human intent + AI generation + human verification.","Intent → verify"],["Assets compound; one-off chats do not.","Compounding"]],"A Survey of Vibe Coding with Large Language Models",ax("2510.12399"),"karpathy","Inventory this folder as an AI-asset table with type, use, and owner."],
+[1,29,"👥","AI Pair Programming: Traditional Methods vs. the AI Pair Programming Method","Driver ⇄ Navigator","s09-pairing.mp4",[["Traditional: two humans, one keyboard, shared context.","Shared keyboard"],["AI method: the human pilots intent; the AI navigates and drafts.","Pilot + navigator"],["The human commits first; then the AI reveals, critiques, and revises.","Commit, then reveal"]],"Agentic Software Engineering: Foundational Pillars and a Research Roadmap",ax("2509.06216"),null,"Act as my navigator: critique my plan in 3 bullets before writing any code."],
+[1,49,"🔗","AI Code Integration for AI Pair Programming","Merge-Ready AI","s10-integration.png",[["Integrate in small, reviewable units.","Small diffs"],["Capture procedures as reusable skills, not tribal memory.","Codify know-how"],["Tests and specs gate every AI contribution.","Gate by spec"]],"Multi-Agent Procedural Knowledge Extraction",ax("2603.11808"),"skills","Split this change into 3 small, reviewable diffs, each with its own test."],
+[1,38,"📋","Development Tools: Developer ↔ GitHub ↔ AI — Copying and Pasting Across Tabs and Apps","Clipboard Pipeline","s11-tabs.mp4",[["The browser tab is the workbench: chat, repo, preview, docs.","Tab workbench"],["Copy-paste is a protocol: spec in, file out, commit.","Paste protocol"],["Computer-use agents can now operate the same GUI loop.","GUI agents"]],"OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use",ax("2508.04482"),null,"Write a single-file HTML paste pad that turns pasted text into a named .md, .html, or .py file."],
+[1,10,"📚","Languages, Libraries, Preferences, and Why","Stack Choices","s12-stack.png",[["Python for data and agents; HTML/JS for every screen.","Py + Web"],["Prefer CDN-loadable libraries: Three.js, Phaser, PixiJS, MediaPipe, PeerJS.","CDN-first"],["LLMs default to Python, so state your language explicitly.","Name the language"]],"A Study of LLMs' Preferences for Libraries and Programming Languages",ax("2503.17181"),null,"Recommend a language and 3 CDN libraries for ___, and justify each in 5 words."],
+[1,17,"🏷️","Language Precedence: Which Keywords and File Types to Invest In","Keyword Leverage","s13-keywords.png",[["The first words of a prompt set the frame.","Lead words"],["Name the output file type early: .md, .html, .py.","Type early"],["Prompt format (Markdown, JSON, YAML) measurably changes results.","Format matters"]],"Does Prompt Formatting Have Any Impact on LLM Performance? (2024)",ax("2411.10541"),null,"Rewrite my prompt so the output file type and the key nouns appear in the first line."],
+[1,11,"🌐🐍","HTML vs. Python: Trade-offs and How to Use Them Together","Browser + Backend","s14-html-py.png",[["HTML: zero install, any device, instant share, GPU in the browser.","Zero-install"],["Python: data, models, multiprocess agents, enterprise integration.","Heavy lifting"],["Pattern: Python produces data and specs; HTML presents and interacts.","Produce → present"]],"WebLLM: A High-Performance In-Browser LLM Inference Engine (Dec 2024)",ax("2412.15803"),null,"Split ___ into a Python data step and an HTML presentation step, and show the file handoff between them."],
+
+[2,18,"📐","Markdown Structures: How to Develop Great Specifications","Spec Is Code","s15-md-spec.png",[["Outline → table → glossary → references → index.","Five structures"],["Headings are contracts; tables are schemas.","Structure = schema"],["The spec outlives the code and drives regeneration.","Spec outlives code"]],"SpecMine: A Large-Scale Corpus of Spec-Driven Development Artifacts",ax("2608.25202"),"grove","Write a Markdown spec (Goal, Inputs, Outputs, Constraints, Tests) for: ___"],
+[2,24,"♻️","Reusable Prompt Specification Patterns","Prompt Templates","s16-patterns.png",[["Role → Goal → Inputs → Constraints → Output type → Checks.","Six slots"],["Package repeated procedures as skills (SKILL.md folders).","Skills"],["Version prompts like code.","Versioned prompts"]],"Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",ax("2602.12430"),"skills","Write a SKILL.md for a task I repeat every week: ___"],
+[2,23,"⚡","Language Speed-Up Phrasing","Dense Words","s17-phrasing.mp4",[["Use one-, two-, and three-word distilled terms.","Short terms"],["Replace paragraphs with lists of nouns and verbs.","Noun-verb lists"],["Compress without losing the constraints that matter.","Lossless brevity"]],"Prompt Compression for Large Language Models: A Survey (NAACL 2025)",ax("2410.12388"),null,"Compress this prompt to 25% of its length, then list anything that was lost."],
+[2,28,"🗃️","Datasets as Reusable Markdown Specification Templates","Data Templates","s18-datasets.png",[["Describe columns, types, ranges, and examples in a Markdown table.","Schema table"],["Generate synthetic rows from the spec for safe demos.","Synthetic rows"],["One spec feeds CSV, JSON, charts, and tests.","One spec, many outputs"]],"Synthetic Data Generation Using Large Language Models: Advances in Text and Code",ax("2503.14023"),null,"From this dataset spec, produce CSV, JSON, and an HTML chart."],
+[2,19,"🪆","Constraint-Based Modeling and Nested Boundaries","Nested Boundaries","s19-nesting.png",[["Draw boundaries: person ⊂ episode ⊂ population ⊂ market.","Concentric sets"],["Constraints first; feasibility is harder than optimality.","Feasible first"],["Each boundary owns its rules, inputs, and outputs.","Boundary contracts"]],"ConstraintBench: Benchmarking LLM Constraint Reasoning on Direct Optimization",ax("2602.22465"),null,"Draw nested boundaries (person ⊂ episode ⊂ population) for ___ as a Markdown tree."],
+[2,21,"🔬","First-Principles Asymptotic Reduction of Parts and Process Steps","Fewer Parts","s20-reduce.png",[["Remove steps until the system breaks; add one back.","Delete, then restore"],["Small recursive systems can beat large static ones.","Less is more"],["Each pass yields smaller gains, so know when to stop.","Diminishing returns"]],"Less is More: Recursive Reasoning with Tiny Networks",ax("2510.04871"),null,"List every step in ___; remove each one in turn and tell me which are essential."],
+[2,22,"✂️","Minimization Principles: Distill, Merge, and Crop Memory Chunks for Communication","Context Budget","s21-distill.png",[["Distill: aim for roughly 120:1 summaries with references.","Distill"],["Merge: combine overlapping chunks into one canonical chunk.","Merge"],["Crop: keep only what the next agent needs.","Crop"]],"A Survey of Context Engineering for Large Language Models",ax("2507.13334"),"barry","Distill this to 10% length, merge duplicates, and crop anything the next agent won't need."],
+
+[3,6,"🧠","AI Memory: Semantic Memory, Episodic Memory, and RAG with Chroma","Memory Types","s22-memory.png",[["Semantic memory = facts; episodic memory = timestamped events.","Facts vs. events"],["RAG retrieves relevant chunks from a vector store such as Chroma.","Retrieve, then reason"],["Agentic RAG lets the agent decide when and what to retrieve.","Agentic retrieval"]],"Memory in the Age of AI Agents",ax("2512.13564"),null,"Write a Python script that loads my Markdown files into Chroma and answers a question with sources."],
+[3,34,"🗂️","Deciding What to Remember","Memory Policy","s23-remember.png",[["Remember what is durable, reused, and costly to re-derive.","Durable + reused"],["Forget what is transient or re-queryable.","Forget transient"],["Order and rank memories, largest to smallest, for recall.","Ordinal recall"]],"A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents",ax("2602.06052"),null,"From this chat, list only the durable, reusable facts as a table."],
+[3,36,"📆","Progressive Longitudinal Intelligence","Timeline Learning","s24-pli.mp4",[["Every person has a timeline of episodes.","Person timeline"],["Each new event updates the summary instead of rebuilding it.","Progressive update"],["Temporal reasoning remains hard, so verify ordering and causality.","Check time order"]],"Large Language Models with Temporal Reasoning for Longitudinal Clinical Summarization and Prediction",ax("2501.18724"),null,"Here is a new event. Update the running summary; don't rewrite it."],
+[3,2,"🔁","Patterns of Progressive Longitudinal Intelligence to Solve AI Ops at Scale","Shift Cycles","s25-cycles.png",[["Run cycles at fixed checkpoints: 06:00, 12:00, 18:00, 24:00.","Four checkpoints"],["Each cycle normalizes cumulative output for review.","Normalize"],["Agents self-improve from each cycle's results.","Self-evolving"]],"A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",ax("2507.21046"),null,"Design four daily checkpoints (06, 12, 18, 24) for an agent pipeline and list what each one normalizes."],
+[3,7,"📦","AI Sets, Models, and Assets: Scale, Cost, and Delivery","Right-Size Models","s26-cost.png",[["Route easy work to small models and hard work to large ones.","Routing"],["Cascade: escalate only when confidence is low.","Cascade"],["Track cost per outcome, not cost per token.","Cost per outcome"]],"Towards Efficient Multi-LLM Inference: Characterization and Analysis of LLM Routing and Hierarchical Techniques",ax("2506.06579"),null,"Classify these tasks as small-model or large-model work and explain each in 5 words."],
+[3,12,"🧪","Per-Model Qualification: Assets, Memory, Gaps, Upgrades, Drift, and Resilience","Drift Guard","s27-drift.png",[["Keep a golden test set per model and per prompt.","Golden set"],["Re-qualify on every upgrade; behavior can drift silently.","Re-qualify"],["Migrate prompts deliberately, with a testbed.","Prompt migration"]],"Prompt Migration: Stabilizing GenAI Applications with Evolving Large Language Models",ax("2507.05573"),null,"Create 10 golden test prompts with expected outputs for ___."],
+[3,13,"🏒","Model Efficiency Gains, Performance Measurement, and Playing Where the Puck Is Headed","Task Horizon","s28-puck.png",[["Measure AI by the length of tasks it can complete.","Time horizon"],["That horizon has been doubling on a regular cadence.","Doubling trend"],["Design today for the agent you will have next year.","Build ahead"]],"Measuring AI Ability to Complete Long Tasks",ax("2503.14499"),"lex490","Estimate how long this task takes a human, and which parts an agent can finish today."],
+
+[4,35,"🐝","Distributed Hive Minds","Collective Intelligence","s29-hive.mp4",[["Many diverse agents can out-reason one agent on logic-heavy tasks.","Swarm reasoning"],["Humans hold judgment; the swarm holds shared memory.","Human judgment"],["Organizational intelligence = people + agents + memory.","Org intelligence"]],"The Society of HiveMind: Multi-Agent Optimization of Foundation Model Swarms to Unlock the Potential of Collective Intelligence",ax("2503.05473"),"ng24","Simulate 3 specialist agents and 1 critic solving ___, and show each turn."],
+[4,15,"🕸️","Distributed Hive Mind Agentic Workflows","Swarm Pipelines","s30-swarm.png",[["Steel man: decentralized coordination scales and adapts.","Coordination scaling"],["Straw man: multi-agent systems often fail on specs and handoffs.","Known failure modes"],["Resolve with explicit roles, verification, and telemetry.","Roles + checks"]],"SwarmSys: Decentralized Swarm-Inspired Agents for Scalable and Adaptive Reasoning",ax("2510.10047"),"ng25","Steel-man and straw-man a multi-agent design for ___, then propose roles and checks that resolve the risks."],
+[4,27,"📡","Patterns and Telemetry in AIOps","Observe Everything","s31-telemetry.png",[["Trace every agent step: input, tool, output, cost, latency.","Traces + spans"],["Show per-minute and per-hour rates on a live panel.","Live rates"],["Alert on drift, loops, and cost spikes.","Alerting"]],"Taming Uncertainty via Automation: Observing, Analyzing, and Optimizing Agentic AI Systems",ax("2507.11277"),null,"Add a telemetry panel showing steps, tokens, latency, and cost per minute."],
+[4,32,"🧮","Web SWOT, Python SWOT, and Azure SWOT","Platform SWOT","s32-swot3.png",[["Web: reach and speed; weaker for secrets and heavy compute.","Reach"],["Python: power and libraries; heavier to share.","Power"],["Azure: governance and scale; slower setup and higher cost.","Governance"]],"When OpenClaw Meets Hospital: Toward an Agentic Operating System for Dynamic Clinical Workflows",ax("2603.11721"),"lex491","Build a three-column SWOT comparing Web, Python, and Azure for ___."],
+[4,33,"🔐","Mixing Complex Python and Azure Patterns: Containers and MFA","Secure Runtime","s33-secure.png",[["Containerize agents; treat generated code as untrusted.","Sandbox"],["Use MFA and least privilege on every identity, human or agent.","Least privilege"],["Tool protocols such as MCP need explicit trust boundaries.","Trust boundaries"]],"Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",ax("2503.23278"),null,"List the minimum permissions and the sandbox needed to run ___ safely."],
+[4,37,"💸","New Approaches to App Development at Speed, Scale, and Minimal Cost","Do More With Less","s34-lowcost.png",[["700+ single-file apps prove the speed of the web model.","Proof by volume"],["Static hosting + browser compute ≈ near-zero marginal cost.","Near-zero cost"],["Route models by task to keep inference spend low.","Cost routing"]],"Doing More with Less – Implementing Routing Strategies in Large Language Model-Based Systems: An Extended Survey",ax("2502.00409"),null,"Estimate the monthly cost of ___ as a static page with browser compute versus a hosted service."],
+[4,16,"🏍️","Daredevil It: From First Contact to a Runnable Solution in Under Five Minutes","Five-Minute Runnable","s35-daredevil.mp4",[["The first output is a runnable graph, not a document.","Runnable first"],["Progression: Markdown spec → HTML app → Python service.","MD → HTML → Py"],["Speed is safe only when the spec gates the result.","Spec-gated speed"]],"Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants",ax("2602.00180"),"grove","Give me the smallest runnable single-file HTML version of: ___"],
+
+[5,8,"🐍","Python Delivery with Regions, Streamlit, and Markdown-Specification-Led Instruction","Region Pattern","s36-regions.png",[["A region = one bounded block of code with one job and one spec.","Bounded blocks"],["Streamlit turns regions into UI panels quickly.","Fast UI"],["Markdown instructions tell the AI which region to change.","Region-targeted edits"]],"Authoring Agent Skills: A Software-Engineering Approach",ax("2607.25032"),null,"Index this Python file into named regions with line ranges, purposes, and owning specs."],
+[5,9,"🏗️","What Regions Look Like in a 30k–40k-Line Multiprocess, Multi-Agent Application","Large-System Map","s37-bigapp.png",[["A region index is the table of contents for humans and agents.","Region index"],["Multiprocess agents communicate through files and queues.","File + queue"],["Most failures are design and handoff failures, not model failures.","Design matters"]],"Why Do Multi-Agent LLM Systems Fail?",ax("2503.13657"),null,"Draw the process map of my multi-agent app (processes, queues, and files) as a Mermaid diagram."],
+[5,25,"📄","Patterns of Outward-Facing Single-File Work","One File, Any Device","s38-singlefile.png",[["One HTML file = app + docs + demo.","Self-contained"],["CDN libraries; no npm; no server.","Zero build"],["Local inference keeps data on the device.","Private by default"]],"WebLLM: A High-Performance In-Browser LLM Inference Engine (Dec 2024)",ax("2412.15803"),null,"Build this as one HTML file using only CDN libraries and no build step."],
+[5,26,"🌍","The GitHub Pages Pattern","Push = Publish","s39-pages.png",[["Commit an HTML file and it is live on a custom domain.","Push to publish"],["The gallery index becomes the course catalog.","Gallery = catalog"],["Version history is the learning journal.","Commits = journal"]],"AIDev: Studying AI Coding Agents on GitHub",ax("2602.09185"),null,"Package this as one HTML file I can commit to GitHub Pages, plus a gallery entry for it."],
+[5,42,"⚙️","GitHub → Actions → HTML/JS App","Automated Gallery","s40-actions.mp4",[["Actions rebuild the index on each commit.","Auto-index"],["Sort newest-first by commit date.","Newest first"],["Check CI results before trusting an agent's change.","CI gate"]],"Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",ax("2601.15195"),null,"Write a GitHub Actions workflow that rebuilds index.html sorted by commit date."],
+[5,41,"🎬","Demo: Video → Transcript → Structured Markdown Spec → HTML App (All I/O) → Video Out","Full I/O Loop","s41-loop.mp4",[["Transcribe a talk and timestamp the key moments.","Transcribe"],["Structure the transcript into a Markdown spec.","Structure"],["Generate the HTML app, record it, and publish the MP4.","Build + record"]],"A Survey on Video Temporal Grounding with Multimodal Large Language Model",ax("2508.10922"),null,"From this transcript, produce a structured Markdown spec, then a single-file HTML app that implements it."],
+[5,43,"🧍","Real-Time Human Sensing: SSL, WebRTC, PeerJS, Speech, TF.js, and MediaPipe","Sense, Speak, Share","s42-sensing.mp4",[["Camera → MediaPipe face, hand, and body landmarks in the browser.","Sense"],["Microphone → speech-to-text; text → speech synthesis.","Speak"],["WebRTC and PeerJS over SSL share streams between users.","Share"]],"From Turn-Taking to Synchronous Dialogue: A Survey of Full-Duplex Spoken Language Models",ax("2509.14515"),null,"Draw webcam hand landmarks on a canvas and speak the number of raised fingers aloud."],
+
+[6,39,"🔌","Frontier AI Systems, Multimodal Tools, and Protocols: MCP and A2A","Agent Interop","s43-protocols.png",[["MCP connects a model to tools and data.","Model ↔ tools"],["A2A connects agents to other agents.","Agent ↔ agent"],["Adopt in phases: tools first, then agent collaboration.","Phased adoption"]],"A Survey of Agent Interoperability Protocols: MCP, ACP, A2A, and ANP",ax("2505.02279"),"mcp","Describe the MCP tools this app would need as JSON schemas."],
+[6,40,"🌎","AI in the Wild: GPT, Gemini, Grok, Claude, Meta, HeyGen, and GitHub","Multi-Model Field Kit","s44-wild.mp4",[["Use each model for what it does best, and compare A/B.","Best tool per task"],["Video avatars (HeyGen) and code hosts (GitHub) close the loop.","Media + code"],["Public apps + live MCP tools = runnable memory.","Runnable memory"]],"Dynamic Model Routing and Cascading for Efficient LLM Inference: A Survey",ax("2603.04445"),"lex490","Compare GPT, Gemini, Claude, and Grok on this one task and show the outputs side by side."],
+[6,44,"🛡️","Setup Process: Automating First Principles, the Minimal Necessary, Security, and Architecture","Minimal Necessary","s45-setup.png",[["Automate setup as a reusable skill or script.","Scripted setup"],["Install only what is necessary; every dependency is risk.","Minimal surface"],["Architecture = boundaries + permissions + logs.","Bounded design"]],"SoK: Agentic Skills – Beyond Tool Use in LLM Agents",ax("2602.20867"),null,"Write an automated setup script with only the minimum dependencies, plus a short security checklist."],
+[6,45,"🖥️","Hardware and Networks","Edge + Cloud","s46-hardware.png",[["Test on every device class: tablets, foldables, laptops, GPUs.","Device matrix"],["Push light inference to the edge; keep heavy work in the cloud.","Edge/cloud split"],["Bandwidth and latency budgets shape the design.","Network budget"]],"Network Edge Inference for Large Language Models: Principles, Techniques, and Opportunities",ax("2604.22906"),null,"Make a device-test matrix for my apps across tablets, foldables, laptops, and GPU machines."],
+[6,46,"📶","Network Process Activation","Wake the Swarm","s47-activate.mp4",[["Nodes discover, handshake, and announce capabilities.","Discover"],["Agents coordinate with limited local information.","Local rules"],["Health checks confirm the network is live before work starts.","Health check"]],"Benchmarking LLMs' Swarm Intelligence",ax("2505.04364"),null,"Write a health-check handshake for 5 peer nodes that announces each node's capabilities."],
+[6,47,"🏭","Agentic Azure Software Factory Activation","Dark Factory On","s48-factory.mp4",[["Six agents: Organization, Market, Vision, Summary, Publication, Performance.","Six-agent line"],["Each agent has a spec, inputs, outputs, and an evaluator.","Spec + eval"],["Healthcare deployment requires near-total human oversight.","Oversight"]],"Agentic AI in Healthcare & Medicine: A Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-based Agents",ax("2602.04813"),"barry","Diagram the six-agent pipeline (Organization, Market, Vision, Summary, Publication, Performance) as Mermaid."],
+[6,48,"🔄","Azure Synchronization","One Source of Truth","s49-sync.png",[["Sync specs, data, and memory on a schedule.","Scheduled sync"],["Resolve conflicts by timestamp and owner.","Conflict rules"],["Retrieval indexes refresh with every sync.","Fresh index"]],"Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG",ax("2501.09136"),null,"Design a sync plan for specs, data, and memory, with conflict rules by timestamp and owner."]
+];
+
+// frames: title, then per act a divider + 7 slides, then closing
+const F=[{k:"title"}];
+ACTS.forEach((a,ai)=>{F.push({k:"act",ai});S.forEach((s,si)=>{if(s[0]===ai)F.push({k:"slide",si})})});
+F.push({k:"close"});
+
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let cur=0, seen=new Set(), auto=false, remain=60, paused=false, tick=null;
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ---- media store (IndexedDB, best effort) ---- */
+let dbp=null;
+function db(){ if(dbp) return dbp; dbp=new Promise(res=>{try{const r=indexedDB.open("hive-deck-media",1);r.onupgradeneeded=()=>r.result.createObjectStore("m");r.onsuccess=()=>res(r.result);r.onerror=()=>res(null)}catch(e){res(null)}}); return dbp;}
+async function mget(k){const d=await db();if(!d)return null;return new Promise(r=>{try{const q=d.transaction("m").objectStore("m").get(k);q.onsuccess=()=>r(q.result||null);q.onerror=()=>r(null)}catch(e){r(null)}})}
+async function mput(k,v){const d=await db();if(!d)return;try{d.transaction("m","readwrite").objectStore("m").put(v,k)}catch(e){}}
+async function mdel(k){const d=await db();if(!d)return;try{d.transaction("m","readwrite").objectStore("m").delete(k)}catch(e){}}
+const memMedia={};
+
+function slideNo(si){return si+1}
+function render(){
+  const f=F[cur]; const st=$("stage");
+  let html="";
+  if(f.k==="title"){
+    $("actlabel").textContent="Opening";
+    html=`<div class="frame hero">
+      <div class="eyebrow"><b>FDE Mentor Session</b><span>49 slides · 1 minute each</span></div>
+      <h1>Distributed <em>Hive Mind</em> Agentic Workflows for Progressive Longitudinal Intelligence</h1>
+      <p class="lede">Solving for AI operations at scale in healthcare: care and compassion first, then the specs, memory, swarms, and delivery patterns that make it work.</p>
+      <div class="formula"><span><b>7</b> acts</span><span>× <b>7</b> rooms</span><span>= <b>49</b> minutes</span><span>🧭 walk it like a memory palace</span></div>
+      <p class="byline">Aaron C. Wacker · All.AI Inc. · AI pair programming with Claude</p>
+      <div class="navgroup"><button class="btn primary" data-go="1">Begin Act I →</button><button class="btn" data-map>⬢ Open the 7×7 map</button></div>
+    </div>`;
+  } else if(f.k==="act"){
+    const a=ACTS[f.ai];
+    $("actlabel").textContent=`Act ${a.r} · ${a.name}`;
+    const items=S.map((s,si)=>[s,si]).filter(([s])=>s[0]===f.ai);
+    html=`<div class="frame divider">
+      <div class="roman" aria-hidden="true">${a.r}</div>
+      <div style="min-width:0">
+        <div class="eyebrow"><b>Act ${a.r} of VII</b><span>Slides ${slideNo(items[0][1])}–${slideNo(items[6][1])}</span></div>
+        <h2>${a.e} ${esc(a.name)}</h2>
+        <p class="why">${esc(a.why)}</p>
+        <ol class="rooms">${items.map(([s,si])=>`<li data-slide="${si}" tabindex="0"><span class="k">${String(slideNo(si)).padStart(2,"0")}</span><span>${s[2]} ${esc(s[3])}</span></li>`).join("")}</ol>
+      </div></div>`;
+  } else if(f.k==="slide"){
+    const s=S[f.si], a=ACTS[s[0]], v=s[9]?V[s[9]]:null;
+    $("actlabel").textContent=`Act ${a.r} · ${a.name}`;
+    const isPdf=/arxiv\.org\/pdf/.test(s[8]);
+    html=`<article class="frame slide">
+      <div class="eyebrow"><b>Slide ${slideNo(f.si)} / 49</b><span>Act ${a.r}</span><span>Topic #${s[1]} in your list</span></div>
+      <h2><span class="em">${s[2]}</span>${esc(s[3])}</h2>
+      <div class="tag">🔑 <span>${esc(s[4])}</span></div>
+      <div class="grid">
+        <div class="col">
+          <div style="overflow-x:auto"><table class="pts"><thead><tr><th></th><th>🎯 Point</th><th>🗝️ Distilled</th></tr></thead><tbody>
+            ${s[6].map((p,i)=>`<tr><td class="n">${i+1}</td><td>${esc(p[0])}</td><td class="d">${esc(p[1])}</td></tr>`).join("")}
+          </tbody></table></div>
+          <div class="prompt"><div class="row"><span class="lbl">📋 Try this prompt</span><button class="btn" data-copy="${f.si}">Copy</button></div><code id="pr${f.si}">${esc(s[10])}</code></div>
+        </div>
+        <div class="col">
+          <div class="media" id="media" data-key="${s[5]}">
+            <div class="ph"><span style="font-size:28px">${/mp4$/.test(s[5])?"🎬":"🖼️"}</span><span class="fn">${s[5]}</span><span class="sub">Drop a PNG or MP4 here, or <button class="btn" data-pick style="padding:2px 8px;font-size:13px">choose a file</button></span></div>
+            <input type="file" id="mfile" accept="image/*,video/*" aria-label="Choose media for this slide">
+          </div>
+          <div class="ref"><span class="lbl">📚 Best-match reference</span><span class="pt">${esc(s[7])}</span>
+            <span class="links"><a href="${s[8]}" target="_blank" rel="noopener">${isPdf?"📄 arXiv PDF "+s[8].split("/").pop():"📕 Read the paper"}</a>${v?`<a href="${v[1]}" target="_blank" rel="noopener">📺 ${esc(v[0])}</a>`:""}</span></div>
+        </div>
+      </div></article>`;
+  } else {
+    $("actlabel").textContent="Close";
+    html=`<div class="frame hero">
+      <div class="eyebrow"><b>Lift and shift</b><span>From memory map to super app</span></div>
+      <h1>Keep the map <em>alive</em></h1>
+      <ol class="steps">
+        <li>Revise the Markdown memory map; it stays the single source of truth.</li>
+        <li>Fill each slide's media slot from your MP4 and PNG folders (the file names are already set).</li>
+        <li>Generate the PowerPoint: one slide per card, with title, three-row table, and media.</li>
+        <li>Grow this deck into the super HTML app: 7 rooms × 7 stations, each demoing its technique with file-type I/O.</li>
+        <li>After each talk, log questions as episodes and update the map progressively.</li>
+      </ol>
+      <div class="close-links"><a class="btn" href="https://allaiinc.org/" target="_blank" rel="noopener">🌐 allaiinc.org</a><a class="btn" href="https://github.com/AaronCWacker/AI-UI-UX-JS/" target="_blank" rel="noopener">💻 AI-UI-UX-JS on GitHub</a><button class="btn" data-go="0">↺ Back to start</button></div>
+      <p class="byline">🖤 Inventor: Aaron C. Wacker · Co-author via AI pair programming: Claude</p>
+    </div>`;
+  }
+  st.innerHTML=html;
+  if(f.k==="slide"){ seen.add(f.si); wireMedia(S[f.si][5]); }
+  $("count").textContent=f.k==="slide"?`${slideNo(f.si)} / 49`:(f.k==="act"?`Act ${ACTS[f.ai].r}`:(cur===0?"Start":"End"));
+  $("bar").style.width=(cur/(F.length-1)*100)+"%";
+  $("prev").disabled=cur===0; $("next").disabled=cur===F.length-1;
+  store.set("hive-deck-pos",String(cur));
+  try{history.replaceState(null,"","#f"+cur)}catch(e){}
+  $("main").scrollTop=0;
+  resetTimer();
+}
+
+function go(i){cur=Math.max(0,Math.min(F.length-1,i));render();}
+function goSlide(si){go(F.findIndex(f=>f.k==="slide"&&f.si===si));closeMap();}
+
+/* media slot */
+function showMedia(el,blob){
+  el.querySelectorAll("img,video,.clear").forEach(n=>n.remove());
+  if(!blob) return;
+  const url=URL.createObjectURL(blob);
+  const m=blob.type.startsWith("video")?Object.assign(document.createElement("video"),{src:url,controls:true,muted:true,loop:true,playsInline:true}):Object.assign(document.createElement("img"),{src:url,alt:"Slide media"});
+  el.appendChild(m);
+  const c=document.createElement("button");c.className="btn clear";c.textContent="Remove";c.onclick=async e=>{e.stopPropagation();delete memMedia[el.dataset.key];await mdel(el.dataset.key);showMedia(el,null)};
+  el.appendChild(c);
+}
+async function wireMedia(key){
+  const el=$("media"), inp=$("mfile");
+  const existing=memMedia[key]||await mget(key);
+  if($("media")===el && existing) showMedia(el,existing);
+  const take=async file=>{ if(!file||!/^(image|video)\//.test(file.type)){toast("Use a PNG, JPG, or MP4 file.");return} memMedia[key]=file; await mput(key,file); showMedia(el,file); toast("Media added to this slide"); };
+  inp.onchange=()=>take(inp.files[0]);
+  el.ondragover=e=>{e.preventDefault();el.classList.add("drag")};
+  el.ondragleave=()=>el.classList.remove("drag");
+  el.ondrop=e=>{e.preventDefault();el.classList.remove("drag");take(e.dataTransfer.files[0])};
+}
+
+/* timer */
+const CIRC=75.4;
+function drawTimer(){const t=Math.max(remain,0);$("tval").textContent=remain<0?"+"+Math.abs(remain)+"s":`${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`;
+  $("arc").style.strokeDashoffset=String(CIRC*(1-Math.max(remain,0)/60));$("timer").classList.toggle("over",remain<=0);
+  $("timer").setAttribute("aria-label",paused?"Timer paused":"Time left on this slide");}
+function resetTimer(){remain=60;drawTimer();}
+function startTick(){clearInterval(tick);tick=setInterval(()=>{if(paused||!$("overview").hidden)return;remain--;drawTimer();if(remain===0&&auto&&F[cur].k!=="close")go(cur+1)},1000)}
+function toggleTimer(){paused=!paused;toast(paused?"Timer paused":"Timer running");drawTimer()}
+
+/* overview */
+function buildMap(){
+  const comb=$("comb");
+  comb.innerHTML=ACTS.map((a,ai)=>`<div class="combrow"><div class="rowlbl">Act ${a.r}<br>${a.e}</div>${S.map((s,si)=>[s,si]).filter(([s])=>s[0]===ai).map(([s,si])=>{
+    const isCur=F[cur].k==="slide"&&F[cur].si===si;
+    return `<button class="hex${isCur?" cur":seen.has(si)?" seen":""}" data-slide="${si}" title="${esc(s[3])}"><span class="e">${s[2]}</span><span class="no">${String(si+1).padStart(2,"0")}</span><span class="tt">${esc(s[4])}</span></button>`}).join("")}</div>`).join("");
+}
+function openMap(){buildMap();$("overview").hidden=false;$("ovclose").focus()}
+function closeMap(){$("overview").hidden=true}
+
+let tt=null;function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,1600)}
+
+/* events */
+$("prev").onclick=()=>go(cur-1);
+$("next").onclick=()=>go(cur+1);
+$("timer").onclick=toggleTimer;
+$("auto").onclick=()=>{auto=!auto;$("auto").setAttribute("aria-pressed",String(auto));toast(auto?"Auto-advance on: next slide when the minute ends":"Auto-advance off")};
+$("ovbtn").onclick=openMap; $("ovclose").onclick=closeMap;
+$("fs").onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>toast("Fullscreen isn't available here"))}catch(e){toast("Fullscreen isn't available here")}};
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-go]");if(g){go(+g.dataset.go);return}
+  if(e.target.closest("[data-map]")){openMap();return}
+  const sl=e.target.closest("[data-slide]");if(sl){goSlide(+sl.dataset.slide);return}
+  if(e.target.closest("[data-pick]")){$("mfile")?.click();return}
+  const cp=e.target.closest("[data-copy]");if(cp){const txt=S[+cp.dataset.copy][10];
+    const sel=()=>{const r=document.createRange();r.selectNodeContents($("pr"+cp.dataset.copy));const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Selected. Press Ctrl+C or ⌘C to copy")};
+    try{navigator.clipboard.writeText(txt).then(()=>toast("✅ Prompt copied"),sel)}catch(err){sel()}}
+});
+document.addEventListener("keydown",e=>{
+  if(e.target.matches("input,textarea"))return;
+  const k=e.key;
+  if(!$("overview").hidden){if(k==="Escape"||k==="o"||k==="O")closeMap();return}
+  if(k==="Enter"&&e.target.matches("li[data-slide]")){goSlide(+e.target.dataset.slide);return}
+  if(k==="ArrowRight"||k==="PageDown"||(k===" "&&!e.target.matches("button"))){e.preventDefault();go(cur+1)}
+  else if(k==="ArrowLeft"||k==="PageUp"){e.preventDefault();go(cur-1)}
+  else if(k==="Home")go(0); else if(k==="End")go(F.length-1);
+  else if(k==="o"||k==="O")openMap(); else if(k==="t"||k==="T")toggleTimer();
+  else if(k==="a"||k==="A")$("auto").click(); else if(k==="f"||k==="F")$("fs").click();
+});
+let sx=null;$("main").addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+$("main").addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>70)go(cur+(dx<0?1:-1));sx=null},{passive:true});
+
+/* boot: #f12 deep link, else last position */
+const h=/^#f(\d+)$/.exec(location.hash||"");const saved=parseInt(store.get("hive-deck-pos")||"0",10);
+cur=h?Math.min(+h[1],F.length-1):(isNaN(saved)?0:Math.min(saved,F.length-1));
+render();startTick();
+</script>
+
+</body></html>
